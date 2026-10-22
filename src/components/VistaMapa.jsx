@@ -31,6 +31,7 @@ export default function VistaMapa({ abrir }) {
           ? <><li><span className="dot" style={{ background: "var(--sun)" }} />Más intenso = faltan más negocios de {tipo.toLowerCase()}</li><li><span className="dot" style={{ background: "var(--st-vacio)" }} />Sin hueco</li></>
           : Object.entries(ESTADOS).map(([k, e]) => <li key={k}><span className="dot" style={{ background: e.color }} />{e.nombre}</li>)}
       </ul>
+      <p className="nota">En gris claro, la periferia (urbanizaciones y polígonos, 4,9 % de la población): fuera del análisis porque allí la compra es en coche, no a pie.</p>
     </div>
   );
 }
