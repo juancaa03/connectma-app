@@ -6,7 +6,7 @@ export const porCodigo = Object.fromEntries(zonas.map((z) => [z.c, z]));
 
 export const ESTADOS = {
   POTENCIAL: { nombre: "Potencial", color: "var(--st-potencial)", accion: "informe", orden: 0,
-    lectura: "Faltan negocios para los vecinos que hay o que llegan." },
+    lectura: "Tiene muy poca oferta de algún tipo de negocio para los vecinos que hay o que llegan." },
   DECLIVE: { nombre: "Declive", color: "var(--st-declive)", accion: "aixequem", orden: 1,
     lectura: "Pierde vecinos y ya le falta comercio." },
   "EN RIESGO": { nombre: "En riesgo", color: "var(--st-riesgo)", accion: "local", orden: 2,
@@ -29,6 +29,21 @@ export function ordenar(lista) {
     ESTADOS[a.estado].orden - ESTADOS[b.estado].orden ||
     faltanTotal(b) - faltanTotal(a) ||
     a.barrio.localeCompare(b.barrio, "es"));
+}
+
+// Local vacío marcado por la técnica: ¿oportunidad de ubicación o síntoma de declive?
+export function lecturaLocales(z, locales = []) {
+  const n = locales.length;
+  if (!n) return null;
+  if (["DECLIVE", "EN RIESGO"].includes(z.estado) || n >= 3)
+    return { tipo: "alerta", titulo: "Posible síntoma de declive",
+      texto: `${n} ${n === 1 ? "local vacío marcado" : "locales vacíos marcados"} en una zona ${n >= 3 ? "donde se acumulan cierres" : "que pierde demanda"}. Vigila si se suman más: es candidata a Aixequem Persianes.` };
+  const polo = z.polos?.[0];
+  if ((z.indice ?? 0) >= 1 || polo)
+    return { tipo: "ubicacion", titulo: "Oportunidad de ubicación a revisar",
+      texto: `Local vacío en una zona que funciona (${Math.round((z.indice ?? 0) * 100)} % del comercio de un barrio típico${polo ? `, ${polo.nombre} a ${polo.dist} m` : ""}). Encaja un negocio que complemente lo que ya atrae gente. Antes, revisa por qué está vacío: precio, estado o tamaño.` };
+  return { tipo: "ubicacion", titulo: "Local vacío a revisar",
+    texto: "Revisa por qué está vacío (precio, estado, tamaño) y si encaja alguno de los tipos por debajo de lo normal en la zona." };
 }
 
 export const fmt = (n, d = 0) => (n == null ? "—" : n.toLocaleString("es-ES", { maximumFractionDigits: d, minimumFractionDigits: d, useGrouping: "always" }));

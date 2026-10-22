@@ -1,13 +1,13 @@
-import { ESTADOS, descargarCSV, faltanTotal, fmt, ordenar, porCodigo, pp, zonas } from "../lib.js";
+import { ESTADOS, descargarCSV, fmt, ordenar, porCodigo, pp, zonas } from "../lib.js";
 
 export default function Aixequem({ enLista, alternarLista, abrir, marcados }) {
   const lista = ordenar(enLista.map((c) => porCodigo[c]).filter(Boolean));
   const sugeridas = ordenar(zonas.filter((z) => ["DECLIVE", "EN RIESGO"].includes(z.estado) && !enLista.includes(z.c)));
 
   const exportar = () => descargarCSV("candidatas_aixequem_persianes.csv", [
-    ["Sección", "Barrio", "Estado", "Población vs barrio típico (pp)", "Comercio de proximidad (% de lo típico)", "Negocios que faltan", "Locales vacíos marcados", "Motivo"],
+    ["Sección", "Barrio", "Estado", "Población vs barrio típico (pp)", "Comercio de proximidad (% de lo típico)", "Muy por debajo de lo normal", "Locales vacíos marcados", "Motivo"],
     ...lista.map((z) => [z.c, z.barrio, ESTADOS[z.estado].nombre, z.pobRel, z.indice == null ? "" : Math.round(z.indice * 100),
-      z.ops.map((o) => `${o.tipo} (${Math.round(o.faltan)})`).join(", "), (marcados[z.c] || []).length, z.ficha]),
+      z.ops.map((o) => `${o.tipo} (${o.pct} % de lo normal)`).join(", "), (marcados[z.c] || []).length, z.ficha]),
   ]);
 
   return (
@@ -23,14 +23,14 @@ export default function Aixequem({ enLista, alternarLista, abrir, marcados }) {
         <>
           <div className="table-scroll">
             <table className="tabla">
-              <thead><tr><th>Zona</th><th>Estado</th><th className="n">Población</th><th className="n">Comercio</th><th className="n">Faltan</th><th className="n">Locales vacíos</th><th /></tr></thead>
+              <thead><tr><th>Zona</th><th>Estado</th><th className="n">Población</th><th className="n">Comercio</th><th>Muy por debajo de lo normal</th><th className="n">Locales vacíos</th><th /></tr></thead>
               <tbody>{lista.map((z) => (
                 <tr key={z.c}>
                   <td><button className="link" onClick={() => abrir(z.c)}>{z.barrio}</button> <span className="cod">{z.c}</span></td>
                   <td><span className="dot" style={{ background: ESTADOS[z.estado].color }} /> {ESTADOS[z.estado].nombre}</td>
                   <td className="n">{pp(z.pobRel)}</td>
                   <td className="n">{z.indice == null ? "—" : `${fmt(z.indice * 100)} %`}</td>
-                  <td className="n">{Math.round(faltanTotal(z)) || "—"}</td>
+                  <td>{z.ops.map((o) => `${o.tipo} (${o.pct} %)`).join(", ") || "—"}</td>
                   <td className="n">{(marcados[z.c] || []).length || "—"}</td>
                   <td><button className="link" onClick={() => alternarLista(z.c)}>Quitar</button></td>
                 </tr>

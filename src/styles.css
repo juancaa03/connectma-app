@@ -111,7 +111,13 @@ legend, .campo { font-weight: 700; font-size: var(--s-1); margin-bottom: 0.4rem;
 .acciones { display: grid; gap: 0.5rem; }
 .form-local { margin-top: 1rem; display: grid; gap: 0.6rem; background: var(--paper); padding: 1rem; border-radius: 8px; }
 .form-local label { display: grid; gap: 0.3rem; font-weight: 600; font-size: var(--s-1); }
-.locales { padding-left: 1.1rem; font-size: var(--s-1); }
+.locales, .otros { padding-left: 1.1rem; font-size: var(--s-1); }
+.otros { color: var(--ink-soft); }
+.cerca { font-size: var(--s-1); margin-top: 0.8rem; }
+.lectura { margin-top: 1rem; padding: 0.8rem 1rem; border-radius: 8px; font-size: 0.95rem; }
+.lectura.ubicacion { background: #e5f4e4; color: #1f4a30; }
+.lectura.alerta { background: #fbe4e2; color: #7a1f26; }
+.tag.alerta { color: var(--brick); }
 
 /* Páginas */
 .pagina { padding: clamp(1rem, 3vw, 2rem); max-width: 1200px; margin: 0 auto; }

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { BARRIOS, ESTADOS, TIPOS, faltanTotal, ordenar, zonas } from "../lib.js";
+import { BARRIOS, ESTADOS, TIPOS, lecturaLocales, ordenar, zonas } from "../lib.js";
 import Mapa from "./Mapa.jsx";
 
 export default function Bandeja({ abrir, enLista, marcados }) {
@@ -8,9 +8,9 @@ export default function Bandeja({ abrir, enLista, marcados }) {
   const [tipo, setTipo] = useState("");
 
   const lista = useMemo(() => ordenar(zonas.filter((z) =>
-    (estado === "TODAS" || (estado === "ACCION" ? ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) : z.estado === estado)) &&
+    (estado === "TODAS" || (estado === "ACCION" ? ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) || marcados[z.c]?.length > 0 : z.estado === estado)) &&
     (!barrio || z.barrio === barrio) &&
-    (!tipo || z.ops.some((o) => o.tipo === tipo)))), [estado, barrio, tipo]);
+    (!tipo || z.ops.some((o) => o.tipo === tipo)))), [estado, barrio, tipo, marcados]);
 
   const cuenta = (e) => zonas.filter((z) => z.estado === e).length;
   const visibles = new Set(lista.map((z) => z.c));
@@ -20,7 +20,7 @@ export default function Bandeja({ abrir, enLista, marcados }) {
       <aside className="filtros" aria-label="Filtros">
         <fieldset>
           <legend>Estado</legend>
-          {[["ACCION", "Requieren acción", zonas.filter((z) => ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable)).length],
+          {[["ACCION", "Requieren acción", zonas.filter((z) => ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) || marcados[z.c]?.length > 0).length],
             ...Object.keys(ESTADOS).map((e) => [e, ESTADOS[e].nombre, cuenta(e)]),
             ["TODAS", "Todas", zonas.length]].map(([v, n, k]) => (
             <label key={v} className={`opcion${estado === v ? " on" : ""}`}>
@@ -51,7 +51,7 @@ export default function Bandeja({ abrir, enLista, marcados }) {
       <section className="cola" aria-live="polite">
         <header className="cola-head">
           <h1>{lista.length} {lista.length === 1 ? "zona" : "zonas"}</h1>
-          <p>Ordenadas por prioridad: primero potencial, declive y riesgo; dentro de cada estado, las que más negocios necesitan.</p>
+          <p>Ordenadas por prioridad: primero potencial, declive y riesgo; dentro de cada estado, las que más se apartan de lo normal. Los porcentajes son la oferta de cada tipo frente a un barrio típico de Mataró.</p>
         </header>
         {lista.length === 0 && <p className="vacio">Ninguna zona cumple estos filtros. Prueba con "Todas" o quita el barrio.</p>}
         <ol className="filas">
@@ -67,14 +67,14 @@ export default function Bandeja({ abrir, enLista, marcados }) {
                   {ops.length > 0 && (
                     <span className="huecos">
                       {ops.slice(0, 4).map((o) => (
-                        <span key={o.tipo} className={`hueco${o.fiable ? "" : " dudoso"}`}>{o.tipo} <b>−{Math.round(o.faltan)}</b></span>
+                        <span key={o.tipo} className={`hueco${o.fiable ? "" : " dudoso"}`}>{o.tipo} <b>{o.pct} %</b></span>
                       ))}
                     </span>
                   )}
                   <span className="fila-meta">
-                    {faltanTotal(z) > 0 && <span>Faltan ~{Math.round(faltanTotal(z))} negocios</span>}
+                    {ops.length > 0 && <span>{ops.length} {ops.length === 1 ? "tipo" : "tipos"} muy por debajo de lo normal</span>}
                     {enLista.includes(z.c) && <span className="tag">En lista Aixequem</span>}
-                    {marcados[z.c]?.length > 0 && <span className="tag">{marcados[z.c].length} local vacío</span>}
+                    {marcados[z.c]?.length > 0 && <span className={`tag ${lecturaLocales(z, marcados[z.c]).tipo}`}>{lecturaLocales(z, marcados[z.c]).titulo}</span>}
                     {z.revisar && <span className="tag gris">Límites revisados</span>}
                   </span>
                 </button>

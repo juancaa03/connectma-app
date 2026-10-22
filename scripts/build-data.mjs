@@ -50,15 +50,18 @@ const v2 = leerCSV("data/radar_v2_oportunidades.csv");
 const porSeccion = {};
 for (const r of v2) {
   const s = (porSeccion[r.cusec] ??= { vecinos: num(r.vecinos_entorno), renta: num(r.renta_persona), pct65: num(r.pct_65_mas), ops: [] });
-  if (r.oportunidad === "si") {
-    s.ops.push({
-      tipo: CORTO[r.tipo] || r.tipo,
-      oferta: num(r.oferta), esperado: num(r.esperado), faltan: num(r.faltan),
-      p: num(r.p_azar), fiable: r.confianza_dato !== "baja",
-    });
-  }
+  const o = {
+    tipo: CORTO[r.tipo] || r.tipo,
+    oferta: num(r.oferta), esperado: num(r.esperado), faltan: num(r.faltan),
+    pct: num(r.esperado) ? Math.round((100 * num(r.oferta)) / num(r.esperado)) : null,
+    p: num(r.p_azar), fiable: r.confianza_dato !== "baja",
+  };
+  if (r.oportunidad === "si") s.ops.push(o);
+  // radar_v2.1: huecos que no son oportunidad pero se enseñan en la ficha
+  else if (r.estado_hueco === "sensible") (s.otros ??= []).push({ ...o, motivo: `Solo aparece con ${r.radios_hueco} radios: a confirmar` });
+  else if (r.estado_hueco === "cubierto") (s.otros ??= []).push({ ...o, motivo: `Cubierto por ${r.cubierto_por}` });
 }
-for (const s of Object.values(porSeccion)) s.ops.sort((a, b) => b.faltan - a.faltan);
+for (const s of Object.values(porSeccion)) s.ops.sort((a, b) => a.pct - b.pct);
 
 // Geometría: misma proyección que la web
 const secc = JSON.parse(fs.readFileSync("data/secciones_mataro.geojson", "utf8")).features
@@ -85,6 +88,19 @@ for (const s of secc) {
   geo[s.properties.CUSEC] = { d, cx: +(cx / n).toFixed(1), cy: +(cy / n).toFixed(1), rural: km2.get(s.properties.CUSEC) > 0.6 };
 }
 
+// Polos de atracción (mercados, grandes superficies) a menos de 450 m del centro de cada sección
+const polos = fs.existsSync("data/polos.csv") ? leerCSV("data/polos.csv") : [];
+const centroLL = {};
+for (const s of secc) {
+  const anillo = polys(s.geometry)[0][0];
+  centroLL[s.properties.CUSEC] = [anillo.reduce((t, p) => t + p[0], 0) / anillo.length, anillo.reduce((t, p) => t + p[1], 0) / anillo.length];
+}
+const distM = ([lon1, lat1], [lon2, lat2]) => Math.hypot((lon2 - lon1) * Math.cos(lat0) * 111320, (lat2 - lat1) * 111320);
+const polosCerca = (c) => polos
+  .map((p) => ({ nombre: p.nombre, tipo: p.tipo, dist: Math.round(distM(centroLL[c], [Number(p.lon), Number(p.lat)])) }))
+  .filter((p) => p.dist <= 450)
+  .sort((a, b) => a.dist - b.dist);
+
 const zonas = v3.map((r) => {
   const s = porSeccion[r.cusec] || { ops: [] };
   return {
@@ -97,11 +113,13 @@ const zonas = v3.map((r) => {
     fuentePob: r.fuente_poblacion,
     indice: num(r.indice_actividad),
     revisar: r.revisar_limites === "si",
-    ficha: r.ficha.replace(/^[^:]+:\s*/, "").replace(/; huecos: .*$/, "."),
+    ficha: r.ficha.replace(/^[^:]+:\s*/, "").replace(/; (huecos|por debajo de lo normal): .*$/, "."),
     vecinos: s.vecinos,
     renta: s.renta,
     pct65: s.pct65,
     ops: s.ops,
+    otros: s.otros || [],
+    polos: polosCerca(r.cusec),
   };
 });
 
