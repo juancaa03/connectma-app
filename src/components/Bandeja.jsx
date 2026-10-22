@@ -52,7 +52,7 @@ export default function Bandeja({ abrir, enLista, marcados }) {
       <section className="cola" aria-live="polite">
         <header className="cola-head">
           <h1>{lista.length} {lista.length === 1 ? "zona" : "zonas"}</h1>
-          <p>Ordenadas por prioridad: primero potencial, declive y riesgo; dentro de cada estado, las que más se apartan de lo normal. Los porcentajes son la oferta de cada tipo frente a lo normal en Mataró; en salud, óptica, floristería y librería, frente a barrios de renta parecida.</p>
+          <p>Ordenadas por prioridad: primero potencial, declive y riesgo; dentro de cada estado, las que más se apartan de lo normal. Los porcentajes son la oferta de cada tipo frente a lo normal en Mataró; en salud, óptica, peluquería, electrónica, floristería y librería, frente a barrios de renta parecida.</p>
         </header>
         {lista.length === 0 && <p className="vacio">Ninguna zona cumple estos filtros. Prueba con "Todas" o quita el barrio.</p>}
         <ol className="filas">
