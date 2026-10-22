@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { BARRIOS, ESTADOS, TIPOS, lecturaLocales, ordenar, zonas } from "../lib.js";
+import { BARRIOS, ESTADOS, TIPOS, avisoObra, lecturaLocales, ordenar, zonas } from "../lib.js";
 import Mapa from "./Mapa.jsx";
 
 export default function Bandeja({ abrir, enLista, marcados }) {
@@ -8,7 +8,7 @@ export default function Bandeja({ abrir, enLista, marcados }) {
   const [tipo, setTipo] = useState("");
 
   const lista = useMemo(() => ordenar(zonas.filter((z) =>
-    (estado === "TODAS" || (estado === "ACCION" ? ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) || marcados[z.c]?.length > 0 : z.estado === estado)) &&
+    (estado === "TODAS" || (estado === "EXTENSION" ? z.ctx?.ext?.length > 0 : estado === "ACCION" ? ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) || marcados[z.c]?.length > 0 : z.estado === estado)) &&
     (!barrio || z.barrio === barrio) &&
     (!tipo || z.ops.some((o) => o.tipo === tipo)))), [estado, barrio, tipo, marcados]);
 
@@ -22,6 +22,7 @@ export default function Bandeja({ abrir, enLista, marcados }) {
           <legend>Estado</legend>
           {[["ACCION", "Requieren acción", zonas.filter((z) => ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) || marcados[z.c]?.length > 0).length],
             ...Object.keys(ESTADOS).map((e) => [e, ESTADOS[e].nombre, cuenta(e)]),
+            ["EXTENSION", "Extender lo que funciona", zonas.filter((z) => z.ctx?.ext?.length > 0).length],
             ["TODAS", "Todas", zonas.length]].map(([v, n, k]) => (
             <label key={v} className={`opcion${estado === v ? " on" : ""}`}>
               <input type="radio" name="estado" value={v} checked={estado === v} onChange={() => setEstado(v)} />
@@ -75,6 +76,8 @@ export default function Bandeja({ abrir, enLista, marcados }) {
                     {ops.length > 0 && <span>{ops.length} {ops.length === 1 ? "tipo" : "tipos"} muy por debajo de lo normal</span>}
                     {enLista.includes(z.c) && <span className="tag">En lista Aixequem</span>}
                     {marcados[z.c]?.length > 0 && <span className={`tag ${lecturaLocales(z, marcados[z.c]).tipo}`}>{lecturaLocales(z, marcados[z.c]).titulo}</span>}
+                    {avisoObra(z) && <span className={`tag ${avisoObra(z).tipo}`}>{avisoObra(z).corto}</span>}
+                    {z.ctx?.ext?.length > 0 && <span className="tag">Extender: {z.ctx.ext.map((e) => e.tipo).join(", ")}</span>}
                     {z.revisar && <span className="tag gris">Límites revisados</span>}
                   </span>
                 </button>

@@ -46,6 +46,17 @@ export function lecturaLocales(z, locales = []) {
     texto: "Revisa por qué está vacío (precio, estado, tamaño) y si encaja alguno de los tipos por debajo de lo normal en la zona." };
 }
 
+// Aviso de obra nueva: la población real es mayor que la del INE 2024
+export function avisoObra(z) {
+  const x = z.ctx;
+  if (!x?.obraNueva) return null;
+  const base = `~${x.vivNuevas} viviendas en edificios terminados desde ${x.anioDesde} (unos ${x.pobExtra} vecinos que el INE 2024 aún no cuenta).`;
+  if (["DECLIVE", "EN RIESGO"].includes(z.estado))
+    return { tipo: "alerta", corto: "Obra nueva: revisar estado", texto: `${base} La zona puede no estar perdiendo demanda: revísala antes de tratarla como ${z.estado === "DECLIVE" ? "zona en declive" : "zona en riesgo"}.` };
+  if (z.estado === "POTENCIAL") return { tipo: "ubicacion", corto: "Obra nueva", texto: `${base} El potencial real es mayor que el que muestra el radar.` };
+  return { tipo: "info", corto: "Obra nueva", texto: `${base} La demanda real es algo mayor que la calculada.` };
+}
+
 export const fmt = (n, d = 0) => (n == null ? "—" : n.toLocaleString("es-ES", { maximumFractionDigits: d, minimumFractionDigits: d, useGrouping: "always" }));
 export const pp = (n) => (n == null ? "—" : `${n > 0 ? "+" : n < 0 ? "−" : ""}${fmt(Math.abs(n), 1)} pp`);
 

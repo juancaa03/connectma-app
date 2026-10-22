@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ESTADOS, fmt, lecturaLocales, porCodigo, pp } from "../lib.js";
+import Contexto from "./Contexto.jsx";
 import Mapa from "./Mapa.jsx";
 
 export default function Ficha({ c, cerrar, abrir, enLista, alternarLista, marcados, marcar, informe }) {
@@ -56,6 +57,8 @@ export default function Ficha({ c, cerrar, abrir, enLista, alternarLista, marcad
             </table>
           </>
         )}
+
+        <Contexto z={z} abrir={abrir} />
 
         {z.otros?.length > 0 && (
           <>

@@ -14,7 +14,11 @@ export default function Asesor({ abrir, informe }) {
         .filter(({ z, o }) => o && (!barrio || z.barrio === barrio))
         .sort((a, b) => (b.z.demanda === "crece") - (a.z.demanda === "crece") || a.o.pct - b.o.pct)
     : [];
-  const set = new Set(candidatas.map(({ z }) => z.c));
+  const extension = tipo
+    ? zonas.map((z) => ({ z, e: z.ctx?.ext?.find((e) => e.tipo === tipo) }))
+        .filter(({ z, e }) => e && (!barrio || z.barrio === barrio) && !candidatas.some((c) => c.z.c === z.c))
+    : [];
+  const set = new Set([...candidatas, ...extension].map(({ z }) => z.c));
 
   const porque = (z, o) => {
     const partes = [`hay ${o.oferta} y lo normal serían ~${fmt(o.esperado)} para sus ${fmt(z.vecinos)} vecinos a 450 m`];
@@ -60,6 +64,19 @@ export default function Asesor({ abrir, informe }) {
                 <button className="btn peq" onClick={() => informe(z.c)}>Informe de la zona</button>
               </li>
             ))}</ol>
+            {extension.length > 0 && (
+              <>
+                <h2 className="ext-t">Funciona al lado, aquí casi no hay</h2>
+                <ol className="recos">{extension.map(({ z, e }) => (
+                  <li key={z.c} style={{ "--c": ESTADOS[z.estado].color }}>
+                    <h3><button className="link" onClick={() => abrir(z.c)}>{z.barrio}</button> <span className="cod">{z.c}</span></h3>
+                    <p className="reco-n">{e.pctAqui} % de lo normal; {e.pctVecina} % en {e.barrio}, a {e.m} m</p>
+                    <p>{tipo} funciona en la zona de al lado y aquí apenas hay: candidata a extenderlo.</p>
+                    <button className="btn peq" onClick={() => informe(z.c)}>Informe de la zona</button>
+                  </li>
+                ))}</ol>
+              </>
+            )}
           </div>
           <Mapa resaltar={(z) => set.has(z.c)} onSelect={abrir} alto="480px" etiqueta={`Zonas con poca oferta de ${tipo}`} />
         </div>

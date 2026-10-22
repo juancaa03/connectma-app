@@ -1,4 +1,5 @@
 import { ESTADOS, fmt, porCodigo, pp } from "../lib.js";
+import Contexto from "./Contexto.jsx";
 import Mapa from "./Mapa.jsx";
 
 // Informe de una página para quien quiere emprender. Se imprime o se guarda como PDF desde el navegador.
@@ -46,8 +47,9 @@ export default function Informe({ c, cerrar }) {
             ))}</tbody>
           </table>
         ) : <p>En esta zona no detectamos ningún tipo de negocio de proximidad claramente por debajo de lo normal.</p>}
+        <Contexto z={z} compacto />
         <footer>
-          <p><b>Cómo se calcula.</b> Se cuentan los vecinos y los negocios a 300, 450 y 600 m a la redonda y se comparan con la mediana de los barrios de Mataró. Un tipo solo aparece si, con los tres radios, hay menos de la mitad de lo normal, la diferencia es de al menos 2 negocios y la probabilidad de que sea casualidad es menor del 5 %. Se descartan los casos cubiertos por un mercado municipal o una gran superficie cercana.</p>
+          <p><b>Cómo se calcula.</b> Se cuentan los vecinos y los negocios a 300, 450 y 600 m a la redonda y se comparan con la mediana de los barrios de Mataró. Un tipo solo aparece si, con el radio de 450 m y al menos otro, hay menos de la mitad de lo normal, la diferencia es de al menos 2 negocios y la probabilidad de que sea casualidad es menor del 5 %. Se descartan los casos cubiertos por un mercado municipal o una gran superficie cercana.</p>
           <p><b>Fuentes.</b> Censo de actividades del Ajuntament de Mataró (GeoVisor), INE (población y renta por sección censal, 2015–2024). Datos agregados, sin información personal.</p>
           <p><b>Antes de decidir.</b> Un hueco es una hipótesis: compruébalo a pie de calle (mercados, grandes superficies, locales disponibles) y consulta con el servicio de Comerç del Ajuntament.</p>
         </footer>

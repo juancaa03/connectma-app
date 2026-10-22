@@ -101,6 +101,20 @@ const polosCerca = (c) => polos
   .filter((p) => p.dist <= 450)
   .sort((a, b) => a.dist - b.dist);
 
+// Contexto (contexto.py): afluencia, obra nueva y extensión. No cambia el estado.
+const ctxCSV = fs.existsSync("data/contexto_seccion.csv") ? leerCSV("data/contexto_seccion.csv") : [];
+const ctx = Object.fromEntries(ctxCSV.map((r) => [r.cusec, {
+  estacion: r.estacion || "", estacionM: num(r.estacion_m),
+  bus: num(r.bus_450), educacion: num(r.educacion_450), salud: num(r.salud_450),
+  mercado: num(r.mercado_450), equipamiento: num(r.equipamiento_450),
+  vivNuevas: num(r.viv_nuevas), anioDesde: num(r.anio_desde), pobExtra: num(r.pob_extra_est),
+  obraNueva: r.obra_nueva === "si",
+  ext: (r.extension || "").split("; ").filter(Boolean).map((e) => {
+    const [tipo, c, barrio, pctVecina, pctAqui, m] = e.split("|");
+    return { tipo: CORTO[tipo] || tipo, c, barrio, pctVecina: num(pctVecina), pctAqui: num(pctAqui), m: num(m) };
+  }),
+}]));
+
 const zonas = v3.map((r) => {
   const s = porSeccion[r.cusec] || { ops: [] };
   return {
@@ -120,6 +134,7 @@ const zonas = v3.map((r) => {
     ops: s.ops,
     otros: s.otros || [],
     polos: polosCerca(r.cusec),
+    ctx: ctx[r.cusec] || null,
   };
 });
 
