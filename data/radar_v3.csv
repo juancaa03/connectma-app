@@ -1,73 +1,73 @@
 cusec,barrio,estado,demanda,pob_rel_pp,renta_rel_pp,fuente_poblacion,indice_actividad,huecos_v2,revisar_limites,ficha
-0812105004,Cerdanyola,POTENCIAL,estable,-5.1,7.4,INE 2015-2024,0.48,panadería/pastelería (20 % de lo normal),,Cerdanyola: Demanda estable; tiene el 48% del comercio de proximidad de un barrio típico; por debajo de lo normal: panadería/pastelería (20 % de lo normal).
-0812104002,Cirera,POTENCIAL,crece,-5.2,11.7,Ajuntament 2008-2020 (INE redibujó la sección),0.77,,si,Cirera: Sube la renta (+12 pp vs barrio típico); tiene el 77% del comercio de proximidad de un barrio típico.
-0812104004,Cirera,POTENCIAL,crece,4.0,17.4,Ajuntament 2008-2020 (INE redibujó la sección),0.34,peluquería/estética y servicios personales (34 % de lo normal),si,Cirera: Gana vecinos (+4 pp vs barrio típico) y sube la renta (+17 pp vs barrio típico); tiene el 34% del comercio de proximidad de un barrio típico; por debajo de lo normal: peluquería/estética y servicios personales (34 % de lo normal).
-0812102002,Eixample,POTENCIAL,crece,11.8,11.2,INE 2015-2024,0.58,panadería/pastelería (30 % de lo normal); electrónica/electrodomésticos/reparación (0 % de lo normal),,"Eixample: Gana vecinos (+12 pp vs barrio típico) y sube la renta (+11 pp vs barrio típico); tiene el 58% del comercio de proximidad de un barrio típico; por debajo de lo normal: panadería/pastelería (30 % de lo normal), electrónica/electrodomésticos/reparación (0 % de lo normal)."
-0812102007,Eixample,POTENCIAL,crece,48.0,-11.4,Ajuntament 2008-2020 (INE redibujó la sección),0.64,"salud (clínicas, fisio, dentista...) (9 % de lo normal); librería/papelería/prensa (21 % de lo normal); floristería (13 % de lo normal); bazar (28 % de lo normal)",si,"Eixample: Gana vecinos (+48 pp vs barrio típico); tiene el 64% del comercio de proximidad de un barrio típico; por debajo de lo normal: salud (clínicas, fisio, dentista...) (9 % de lo normal), librería/papelería/prensa (21 % de lo normal), floristería (13 % de lo normal), bazar (28 % de lo normal)."
-0812102011,Eixample,POTENCIAL,crece,25.9,3.7,Ajuntament 2008-2020 (INE redibujó la sección),0.61,librería/papelería/prensa (10 % de lo normal); electrónica/electrodomésticos/reparación (0 % de lo normal); floristería (0 % de lo normal); óptica/ortopedia (0 % de lo normal); bazar (26 % de lo normal),si,"Eixample: Gana vecinos (+26 pp vs barrio típico) y sube la renta (+4 pp vs barrio típico); tiene el 61% del comercio de proximidad de un barrio típico; por debajo de lo normal: librería/papelería/prensa (10 % de lo normal), electrónica/electrodomésticos/reparación (0 % de lo normal), floristería (0 % de lo normal), óptica/ortopedia (0 % de lo normal), bazar (26 % de lo normal)."
-0812102003,El Palau-Escorxador,POTENCIAL,crece,6.2,6.7,Ajuntament 2008-2020 (INE redibujó la sección),0.5,electrónica/electrodomésticos/reparación (0 % de lo normal); floristería (0 % de lo normal); bazar (17 % de lo normal); panadería/pastelería (43 % de lo normal),si,"El Palau-Escorxador: Gana vecinos (+6 pp vs barrio típico) y sube la renta (+7 pp vs barrio típico); tiene el 50% del comercio de proximidad de un barrio típico; por debajo de lo normal: electrónica/electrodomésticos/reparación (0 % de lo normal), floristería (0 % de lo normal), bazar (17 % de lo normal), panadería/pastelería (43 % de lo normal)."
-0812104007,La Llàntia,POTENCIAL,crece,-2.2,18.0,Ajuntament 2008-2020 (INE redibujó la sección),0.55,peluquería/estética y servicios personales (47 % de lo normal),si,La Llàntia: Sube la renta (+18 pp vs barrio típico); tiene el 55% del comercio de proximidad de un barrio típico; por debajo de lo normal: peluquería/estética y servicios personales (47 % de lo normal).
-0812105021,Cerdanyola,DECLIVE,cae,-13.7,22.1,INE 2015-2024,0.57,,,Cerdanyola: Pierde vecinos (-11%; barrio típico +3%) y ya tiene solo el 57% del comercio de un barrio típico.
-0812102008,Eixample,EN RIESGO,cae,-3.1,-10.4,INE 2015-2024,1.19,,,Eixample: Tiene comercio (119% de lo típico) pero la renta se queda atrás (-10 pp vs barrio típico): vigilar locales que cierran.
-0812106001,Eixample,EN RIESGO,cae,-6.3,-1.5,INE 2015-2024,1.48,,,Eixample: Tiene comercio (148% de lo típico) pero pierde vecinos (-4%; barrio típico +3%): vigilar locales que cierran.
-0812103009,Els Molins,EN RIESGO,cae,-7.3,0.4,INE 2015-2024,0.99,electrónica/electrodomésticos/reparación (37 % de lo normal),,Els Molins: Tiene comercio (99% de lo típico) pero pierde vecinos (-5%; barrio típico +3%): vigilar locales que cierran.
-0812106007,Peramàs,EN RIESGO,cae,0.7,-12.1,INE 2015-2024,1.1,,,Peramàs: Tiene comercio (110% de lo típico) pero la renta se queda atrás (-12 pp vs barrio típico): vigilar locales que cierran.
-0812106008,Peramàs,EN RIESGO,cae,-6.4,-4.4,INE 2015-2024,1.03,,,Peramàs: Tiene comercio (103% de lo típico) pero pierde vecinos (-4%; barrio típico +3%): vigilar locales que cierran.
-0812106013,Peramàs,EN RIESGO,cae,-8.3,2.4,INE 2015-2024,1.09,,,Peramàs: Tiene comercio (109% de lo típico) pero pierde vecinos (-6%; barrio típico +3%): vigilar locales que cierran.
-0812105002,Cerdanyola,ESTABLE,estable,-1.1,3.7,INE 2015-2024,0.8,,,"Cerdanyola: Sin señal clara (80% del comercio típico, demanda estable)."
-0812105003,Cerdanyola,ESTABLE,estable,3.0,-5.6,INE 2015-2024,0.71,,,"Cerdanyola: Sin señal clara (71% del comercio típico, demanda estable)."
-0812104005,La Llàntia,ESTABLE,estable,-2.4,1.9,Ajuntament 2008-2020 (INE redibujó la sección),0.7,,si,"La Llàntia: Sin señal clara (70% del comercio típico, demanda estable)."
-0812101003,Centre,CONSOLIDADA,crece,8.4,-13.7,Ajuntament 2008-2020 (INE redibujó la sección),2.35,,si,Centre: Comercio suficiente (235% de lo típico) y demanda estable o creciente.
-0812102009,Centre,CONSOLIDADA,estable,0.3,-4.7,INE 2015-2024,1.57,,,Centre: Comercio suficiente (157% de lo típico) y demanda estable o creciente.
+0812105004,Cerdanyola,POTENCIAL,estable,-5.1,7.4,INE 2015-2024,0.48,"panadería/pastelería (22 % de lo normal); salud (clínicas, fisio, dentista...) (16 % de lo normal)",,"Cerdanyola: Demanda estable; tiene el 48% del comercio de proximidad de un barrio típico; por debajo de lo normal: panadería/pastelería (22 % de lo normal), salud (clínicas, fisio, dentista...) (16 % de lo normal)."
+0812104004,Cirera,POTENCIAL,crece,4.0,17.4,Ajuntament 2008-2020 (INE redibujó la sección),0.33,,si,Cirera: Gana vecinos (+4 pp vs barrio típico) y sube la renta (+17 pp vs barrio típico); tiene el 33% del comercio de proximidad de un barrio típico.
+0812102002,Eixample,POTENCIAL,crece,11.8,11.2,INE 2015-2024,0.55,,,Eixample: Gana vecinos (+12 pp vs barrio típico) y sube la renta (+11 pp vs barrio típico); tiene el 55% del comercio de proximidad de un barrio típico.
+0812102007,Eixample,POTENCIAL,crece,48.0,-11.4,Ajuntament 2008-2020 (INE redibujó la sección),0.61,bazar (29 % de lo normal); librería/papelería/prensa (33 % de lo normal),si,"Eixample: Gana vecinos (+48 pp vs barrio típico); tiene el 61% del comercio de proximidad de un barrio típico; por debajo de lo normal: bazar (29 % de lo normal), librería/papelería/prensa (33 % de lo normal)."
+0812102011,Eixample,POTENCIAL,crece,25.9,3.7,Ajuntament 2008-2020 (INE redibujó la sección),0.56,librería/papelería/prensa (15 % de lo normal); bazar (27 % de lo normal),si,"Eixample: Gana vecinos (+26 pp vs barrio típico) y sube la renta (+4 pp vs barrio típico); tiene el 56% del comercio de proximidad de un barrio típico; por debajo de lo normal: librería/papelería/prensa (15 % de lo normal), bazar (27 % de lo normal)."
+0812102003,El Palau-Escorxador,POTENCIAL,crece,6.2,6.7,Ajuntament 2008-2020 (INE redibujó la sección),0.47,floristería (0 % de lo normal); bazar (18 % de lo normal); panadería/pastelería (45 % de lo normal),si,"El Palau-Escorxador: Gana vecinos (+6 pp vs barrio típico) y sube la renta (+7 pp vs barrio típico); tiene el 47% del comercio de proximidad de un barrio típico; por debajo de lo normal: floristería (0 % de lo normal), bazar (18 % de lo normal), panadería/pastelería (45 % de lo normal)."
+0812104007,La Llàntia,POTENCIAL,crece,-2.2,18.0,Ajuntament 2008-2020 (INE redibujó la sección),0.62,,si,La Llàntia: Sube la renta (+18 pp vs barrio típico); tiene el 62% del comercio de proximidad de un barrio típico.
+0812105021,Cerdanyola,DECLIVE,cae,-13.7,22.1,INE 2015-2024,0.59,"salud (clínicas, fisio, dentista...) (28 % de lo normal)",,Cerdanyola: Pierde vecinos (-11%; barrio típico +3%) y ya tiene solo el 59% del comercio de un barrio típico.
+0812102008,Eixample,EN RIESGO,cae,-3.1,-10.4,INE 2015-2024,1.12,,,Eixample: Tiene comercio (112% de lo típico) pero la renta se queda atrás (-10 pp vs barrio típico): vigilar locales que cierran.
+0812106001,Eixample,EN RIESGO,cae,-6.3,-1.5,INE 2015-2024,1.36,,,Eixample: Tiene comercio (136% de lo típico) pero pierde vecinos (-4%; barrio típico +3%): vigilar locales que cierran.
+0812103009,Els Molins,EN RIESGO,cae,-7.3,0.4,INE 2015-2024,1.07,,,Els Molins: Tiene comercio (107% de lo típico) pero pierde vecinos (-5%; barrio típico +3%): vigilar locales que cierran.
+0812106007,Peramàs,EN RIESGO,cae,0.7,-12.1,INE 2015-2024,1.19,,,Peramàs: Tiene comercio (119% de lo típico) pero la renta se queda atrás (-12 pp vs barrio típico): vigilar locales que cierran.
+0812106008,Peramàs,EN RIESGO,cae,-6.4,-4.4,INE 2015-2024,1.15,,,Peramàs: Tiene comercio (115% de lo típico) pero pierde vecinos (-4%; barrio típico +3%): vigilar locales que cierran.
+0812106013,Peramàs,EN RIESGO,cae,-8.3,2.4,INE 2015-2024,1.22,,,Peramàs: Tiene comercio (122% de lo típico) pero pierde vecinos (-6%; barrio típico +3%): vigilar locales que cierran.
+0812105003,Cerdanyola,ESTABLE,estable,3.0,-5.6,INE 2015-2024,0.78,,,"Cerdanyola: Sin señal clara (78% del comercio típico, demanda estable)."
+0812104005,La Llàntia,ESTABLE,estable,-2.4,1.9,Ajuntament 2008-2020 (INE redibujó la sección),0.73,,si,"La Llàntia: Sin señal clara (73% del comercio típico, demanda estable)."
+0812101003,Centre,CONSOLIDADA,crece,8.4,-13.7,Ajuntament 2008-2020 (INE redibujó la sección),2.38,,si,Centre: Comercio suficiente (238% de lo típico) y demanda estable o creciente.
+0812102009,Centre,CONSOLIDADA,estable,0.3,-4.7,INE 2015-2024,1.56,,,Centre: Comercio suficiente (156% de lo típico) y demanda estable o creciente.
 0812102010,Centre,CONSOLIDADA,crece,9.1,-4.1,INE 2015-2024,1.84,,,Centre: Comercio suficiente (184% de lo típico) y demanda estable o creciente.
-0812105001,Cerdanyola,CONSOLIDADA,crece,3.2,4.6,Ajuntament 2008-2020 (INE redibujó la sección),0.81,,si,Cerdanyola: Comercio suficiente (81% de lo típico) y demanda estable o creciente.
-0812105005,Cerdanyola,CONSOLIDADA,estable,-4.4,0.0,INE 2015-2024,0.92,,,Cerdanyola: Comercio suficiente (92% de lo típico) y demanda estable o creciente.
-0812105006,Cerdanyola,CONSOLIDADA,crece,3.5,-8.0,INE 2015-2024,0.95,,,Cerdanyola: Comercio suficiente (95% de lo típico) y demanda estable o creciente.
-0812105007,Cerdanyola,CONSOLIDADA,estable,1.1,-6.0,INE 2015-2024,1.0,,,Cerdanyola: Comercio suficiente (100% de lo típico) y demanda estable o creciente.
-0812105008,Cerdanyola,CONSOLIDADA,crece,-5.4,11.7,INE 2015-2024,1.08,,,Cerdanyola: Comercio suficiente (108% de lo típico) y demanda estable o creciente.
-0812105009,Cerdanyola,CONSOLIDADA,crece,7.8,-5.8,INE 2015-2024,1.18,,,Cerdanyola: Comercio suficiente (118% de lo típico) y demanda estable o creciente.
-0812105010,Cerdanyola,CONSOLIDADA,crece,88.1,-9.4,Ajuntament 2008-2020 (INE redibujó la sección),1.08,,si,Cerdanyola: Comercio suficiente (108% de lo típico) y demanda estable o creciente.
-0812105011,Cerdanyola,CONSOLIDADA,estable,0.0,3.7,INE 2015-2024,1.07,,,Cerdanyola: Comercio suficiente (107% de lo típico) y demanda estable o creciente.
-0812105012,Cerdanyola,CONSOLIDADA,estable,-4.9,3.8,INE 2015-2024,1.08,,,Cerdanyola: Comercio suficiente (108% de lo típico) y demanda estable o creciente.
-0812105013,Cerdanyola,CONSOLIDADA,estable,-4.6,-0.3,INE 2015-2024,1.09,,,Cerdanyola: Comercio suficiente (109% de lo típico) y demanda estable o creciente.
-0812105015,Cerdanyola,CONSOLIDADA,crece,4.3,-0.4,INE 2015-2024,0.97,,,Cerdanyola: Comercio suficiente (97% de lo típico) y demanda estable o creciente.
-0812105016,Cerdanyola,CONSOLIDADA,estable,2.0,2.6,INE 2015-2024,0.96,,,Cerdanyola: Comercio suficiente (96% de lo típico) y demanda estable o creciente.
-0812105017,Cerdanyola,CONSOLIDADA,estable,-0.2,3.1,INE 2015-2024,1.0,,,Cerdanyola: Comercio suficiente (100% de lo típico) y demanda estable o creciente.
-0812105019,Cerdanyola,CONSOLIDADA,estable,2.8,7.4,INE 2015-2024,0.96,,,Cerdanyola: Comercio suficiente (96% de lo típico) y demanda estable o creciente.
-0812105020,Cerdanyola,CONSOLIDADA,estable,0.1,3.7,Ajuntament 2008-2020 (INE redibujó la sección),0.92,,si,Cerdanyola: Comercio suficiente (92% de lo típico) y demanda estable o creciente.
-0812104003,Cirera,CONSOLIDADA,estable,-4.5,-9.3,Ajuntament 2008-2020 (INE redibujó la sección),1.13,,si,Cirera: Comercio suficiente (113% de lo típico) y demanda estable o creciente.
-0812104006,Cirera,CONSOLIDADA,estable,-5.1,-9.0,INE 2015-2024,0.83,,,Cirera: Comercio suficiente (83% de lo típico) y demanda estable o creciente.
-0812104008,Cirera,CONSOLIDADA,estable,-5.4,-3.6,INE 2015-2024,0.87,,,Cirera: Comercio suficiente (87% de lo típico) y demanda estable o creciente.
-0812104009,Cirera,CONSOLIDADA,estable,-3.9,-8.0,INE 2015-2024,0.96,,,Cirera: Comercio suficiente (96% de lo típico) y demanda estable o creciente.
-0812101001,Eixample,CONSOLIDADA,crece,10.9,7.5,INE 2015-2024,3.39,,,Eixample: Comercio suficiente (339% de lo típico) y demanda estable o creciente.
-0812101002,Eixample,CONSOLIDADA,estable,3.0,7.5,INE 2015-2024,2.99,,,Eixample: Comercio suficiente (299% de lo típico) y demanda estable o creciente.
-0812101004,Eixample,CONSOLIDADA,crece,10.2,-6.5,INE 2015-2024,3.57,,,Eixample: Comercio suficiente (357% de lo típico) y demanda estable o creciente.
-0812101005,Eixample,CONSOLIDADA,crece,6.5,-14.2,INE 2015-2024,1.65,,,Eixample: Comercio suficiente (165% de lo típico) y demanda estable o creciente.
-0812101006,Eixample,CONSOLIDADA,estable,2.5,-0.1,INE 2015-2024,1.28,,,Eixample: Comercio suficiente (128% de lo típico) y demanda estable o creciente.
-0812101007,Eixample,CONSOLIDADA,crece,5.4,-8.4,INE 2015-2024,2.0,,,Eixample: Comercio suficiente (200% de lo típico) y demanda estable o creciente.
+0812105001,Cerdanyola,CONSOLIDADA,crece,3.2,4.6,Ajuntament 2008-2020 (INE redibujó la sección),0.9,,si,Cerdanyola: Comercio suficiente (90% de lo típico) y demanda estable o creciente.
+0812105002,Cerdanyola,CONSOLIDADA,estable,-1.1,3.7,INE 2015-2024,0.9,,,Cerdanyola: Comercio suficiente (90% de lo típico) y demanda estable o creciente.
+0812105005,Cerdanyola,CONSOLIDADA,estable,-4.4,0.0,INE 2015-2024,1.01,,,Cerdanyola: Comercio suficiente (101% de lo típico) y demanda estable o creciente.
+0812105006,Cerdanyola,CONSOLIDADA,crece,3.5,-8.0,INE 2015-2024,1.08,,,Cerdanyola: Comercio suficiente (108% de lo típico) y demanda estable o creciente.
+0812105007,Cerdanyola,CONSOLIDADA,estable,1.1,-6.0,INE 2015-2024,1.18,,,Cerdanyola: Comercio suficiente (118% de lo típico) y demanda estable o creciente.
+0812105008,Cerdanyola,CONSOLIDADA,crece,-5.4,11.7,INE 2015-2024,1.25,,,Cerdanyola: Comercio suficiente (125% de lo típico) y demanda estable o creciente.
+0812105009,Cerdanyola,CONSOLIDADA,crece,7.8,-5.8,INE 2015-2024,1.37,,,Cerdanyola: Comercio suficiente (137% de lo típico) y demanda estable o creciente.
+0812105010,Cerdanyola,CONSOLIDADA,crece,88.1,-9.4,Ajuntament 2008-2020 (INE redibujó la sección),1.23,,si,Cerdanyola: Comercio suficiente (123% de lo típico) y demanda estable o creciente.
+0812105011,Cerdanyola,CONSOLIDADA,estable,0.0,3.7,INE 2015-2024,1.19,,,Cerdanyola: Comercio suficiente (119% de lo típico) y demanda estable o creciente.
+0812105012,Cerdanyola,CONSOLIDADA,estable,-4.9,3.8,INE 2015-2024,1.2,,,Cerdanyola: Comercio suficiente (120% de lo típico) y demanda estable o creciente.
+0812105013,Cerdanyola,CONSOLIDADA,estable,-4.6,-0.3,INE 2015-2024,1.19,,,Cerdanyola: Comercio suficiente (119% de lo típico) y demanda estable o creciente.
+0812105015,Cerdanyola,CONSOLIDADA,crece,4.3,-0.4,INE 2015-2024,1.09,,,Cerdanyola: Comercio suficiente (109% de lo típico) y demanda estable o creciente.
+0812105016,Cerdanyola,CONSOLIDADA,estable,2.0,2.6,INE 2015-2024,1.09,,,Cerdanyola: Comercio suficiente (109% de lo típico) y demanda estable o creciente.
+0812105017,Cerdanyola,CONSOLIDADA,estable,-0.2,3.1,INE 2015-2024,1.14,,,Cerdanyola: Comercio suficiente (114% de lo típico) y demanda estable o creciente.
+0812105019,Cerdanyola,CONSOLIDADA,estable,2.8,7.4,INE 2015-2024,1.09,,,Cerdanyola: Comercio suficiente (109% de lo típico) y demanda estable o creciente.
+0812105020,Cerdanyola,CONSOLIDADA,estable,0.1,3.7,Ajuntament 2008-2020 (INE redibujó la sección),1.06,,si,Cerdanyola: Comercio suficiente (106% de lo típico) y demanda estable o creciente.
+0812104002,Cirera,CONSOLIDADA,crece,-5.2,11.7,Ajuntament 2008-2020 (INE redibujó la sección),0.81,,si,Cirera: Comercio suficiente (81% de lo típico) y demanda estable o creciente.
+0812104003,Cirera,CONSOLIDADA,estable,-4.5,-9.3,Ajuntament 2008-2020 (INE redibujó la sección),1.25,,si,Cirera: Comercio suficiente (125% de lo típico) y demanda estable o creciente.
+0812104006,Cirera,CONSOLIDADA,estable,-5.1,-9.0,INE 2015-2024,0.87,,,Cirera: Comercio suficiente (87% de lo típico) y demanda estable o creciente.
+0812104008,Cirera,CONSOLIDADA,estable,-5.4,-3.6,INE 2015-2024,0.93,,,Cirera: Comercio suficiente (93% de lo típico) y demanda estable o creciente.
+0812104009,Cirera,CONSOLIDADA,estable,-3.9,-8.0,INE 2015-2024,1.02,,,Cirera: Comercio suficiente (102% de lo típico) y demanda estable o creciente.
+0812101001,Eixample,CONSOLIDADA,crece,10.9,7.5,INE 2015-2024,3.44,,,Eixample: Comercio suficiente (344% de lo típico) y demanda estable o creciente.
+0812101002,Eixample,CONSOLIDADA,estable,3.0,7.5,INE 2015-2024,3.08,,,Eixample: Comercio suficiente (308% de lo típico) y demanda estable o creciente.
+0812101004,Eixample,CONSOLIDADA,crece,10.2,-6.5,INE 2015-2024,3.78,,,Eixample: Comercio suficiente (378% de lo típico) y demanda estable o creciente.
+0812101005,Eixample,CONSOLIDADA,crece,6.5,-14.2,INE 2015-2024,1.58,,,Eixample: Comercio suficiente (158% de lo típico) y demanda estable o creciente.
+0812101006,Eixample,CONSOLIDADA,estable,2.5,-0.1,INE 2015-2024,1.33,,,Eixample: Comercio suficiente (133% de lo típico) y demanda estable o creciente.
+0812101007,Eixample,CONSOLIDADA,crece,5.4,-8.4,INE 2015-2024,2.1,,,Eixample: Comercio suficiente (210% de lo típico) y demanda estable o creciente.
 0812101009,Eixample,CONSOLIDADA,estable,-2.5,-5.6,INE 2015-2024,1.32,,,Eixample: Comercio suficiente (132% de lo típico) y demanda estable o creciente.
-0812102001,Eixample,CONSOLIDADA,estable,-1.8,4.2,INE 2015-2024,1.07,,,Eixample: Comercio suficiente (107% de lo típico) y demanda estable o creciente.
-0812102012,Eixample,CONSOLIDADA,estable,-4.9,-0.8,INE 2015-2024,1.21,bazar (36 % de lo normal),,Eixample: Comercio suficiente (121% de lo típico) y demanda estable o creciente.
-0812103010,Eixample,CONSOLIDADA,estable,-5.3,-7.8,INE 2015-2024,0.91,"salud (clínicas, fisio, dentista...) (35 % de lo normal)",,Eixample: Comercio suficiente (91% de lo típico) y demanda estable o creciente.
-0812106002,Eixample,CONSOLIDADA,crece,4.2,-14.6,INE 2015-2024,2.02,,,Eixample: Comercio suficiente (202% de lo típico) y demanda estable o creciente.
-0812106003,Eixample,CONSOLIDADA,estable,-1.0,-9.7,INE 2015-2024,2.2,,,Eixample: Comercio suficiente (220% de lo típico) y demanda estable o creciente.
-0812106004,Eixample,CONSOLIDADA,crece,3.8,-2.5,INE 2015-2024,1.79,,,Eixample: Comercio suficiente (179% de lo típico) y demanda estable o creciente.
-0812106011,Eixample,CONSOLIDADA,estable,-1.9,-5.0,INE 2015-2024,1.56,,,Eixample: Comercio suficiente (156% de lo típico) y demanda estable o creciente.
-0812106014,Eixample,CONSOLIDADA,estable,0.0,-1.5,INE 2015-2024,1.43,,,Eixample: Comercio suficiente (143% de lo típico) y demanda estable o creciente.
-0812102004,El Palau-Escorxador,CONSOLIDADA,estable,-0.3,9.4,INE 2015-2024,0.88,,,El Palau-Escorxador: Comercio suficiente (88% de lo típico) y demanda estable o creciente.
-0812103007,Els Molins,CONSOLIDADA,estable,-0.5,1.7,INE 2015-2024,0.99,,,Els Molins: Comercio suficiente (99% de lo típico) y demanda estable o creciente.
-0812103008,Els Molins,CONSOLIDADA,estable,-3.2,7.5,INE 2015-2024,1.08,,,Els Molins: Comercio suficiente (108% de lo típico) y demanda estable o creciente.
-0812104001,Els Molins,CONSOLIDADA,crece,5.2,-12.3,INE 2015-2024,1.07,,,Els Molins: Comercio suficiente (107% de lo típico) y demanda estable o creciente.
-0812106005,Peramàs,CONSOLIDADA,estable,-5.1,-7.2,INE 2015-2024,1.09,,,Peramàs: Comercio suficiente (109% de lo típico) y demanda estable o creciente.
-0812106006,Peramàs,CONSOLIDADA,estable,2.2,-7.9,INE 2015-2024,1.33,,,Peramàs: Comercio suficiente (133% de lo típico) y demanda estable o creciente.
-0812106010,Pla D'en Boet,CONSOLIDADA,estable,-2.5,1.0,INE 2015-2024,1.06,,,Pla D'en Boet: Comercio suficiente (106% de lo típico) y demanda estable o creciente.
-0812106012,Pla D'en Boet,CONSOLIDADA,estable,-3.7,1.5,INE 2015-2024,1.29,,,Pla D'en Boet: Comercio suficiente (129% de lo típico) y demanda estable o creciente.
-0812103001,Rocafonda,CONSOLIDADA,crece,7.8,-6.8,INE 2015-2024,0.87,,,Rocafonda: Comercio suficiente (87% de lo típico) y demanda estable o creciente.
-0812103002,Rocafonda,CONSOLIDADA,crece,8.9,4.9,INE 2015-2024,0.87,electrónica/electrodomésticos/reparación (39 % de lo normal),,Rocafonda: Comercio suficiente (87% de lo típico) y demanda estable o creciente.
-0812103003,Rocafonda,CONSOLIDADA,crece,4.4,3.8,INE 2015-2024,0.91,electrónica/electrodomésticos/reparación (22 % de lo normal),,Rocafonda: Comercio suficiente (91% de lo típico) y demanda estable o creciente.
-0812103004,Rocafonda,CONSOLIDADA,estable,0.7,5.7,INE 2015-2024,0.96,electrónica/electrodomésticos/reparación (26 % de lo normal),,Rocafonda: Comercio suficiente (96% de lo típico) y demanda estable o creciente.
-0812103005,Rocafonda,CONSOLIDADA,estable,1.8,6.0,INE 2015-2024,0.94,electrónica/electrodomésticos/reparación (25 % de lo normal),,Rocafonda: Comercio suficiente (94% de lo típico) y demanda estable o creciente.
-0812103011,Rocafonda,CONSOLIDADA,estable,2.8,-8.2,INE 2015-2024,0.95,,,Rocafonda: Comercio suficiente (95% de lo típico) y demanda estable o creciente.
-0812103006,Vista Alegre,CONSOLIDADA,estable,-9.2,7.5,Ajuntament 2008-2020 (INE redibujó la sección),0.99,,si,Vista Alegre: Comercio suficiente (99% de lo típico) y demanda estable o creciente.
-0812103013,Vista Alegre,CONSOLIDADA,estable,-3.5,3.6,Ajuntament 2008-2020 (INE redibujó la sección),1.03,,si,Vista Alegre: Comercio suficiente (103% de lo típico) y demanda estable o creciente.
-0812103014,Vista Alegre,CONSOLIDADA,crece,7.9,-1.0,INE 2015-2024,0.92,"salud (clínicas, fisio, dentista...) (23 % de lo normal); electrónica/electrodomésticos/reparación (0 % de lo normal)",,Vista Alegre: Comercio suficiente (92% de lo típico) y demanda estable o creciente.
+0812102001,Eixample,CONSOLIDADA,estable,-1.8,4.2,INE 2015-2024,1.03,,,Eixample: Comercio suficiente (103% de lo típico) y demanda estable o creciente.
+0812102012,Eixample,CONSOLIDADA,estable,-4.9,-0.8,INE 2015-2024,1.16,bazar (38 % de lo normal),,Eixample: Comercio suficiente (116% de lo típico) y demanda estable o creciente.
+0812103010,Eixample,CONSOLIDADA,estable,-5.3,-7.8,INE 2015-2024,0.86,,,Eixample: Comercio suficiente (86% de lo típico) y demanda estable o creciente.
+0812106002,Eixample,CONSOLIDADA,crece,4.2,-14.6,INE 2015-2024,1.98,,,Eixample: Comercio suficiente (198% de lo típico) y demanda estable o creciente.
+0812106003,Eixample,CONSOLIDADA,estable,-1.0,-9.7,INE 2015-2024,2.24,,,Eixample: Comercio suficiente (224% de lo típico) y demanda estable o creciente.
+0812106004,Eixample,CONSOLIDADA,crece,3.8,-2.5,INE 2015-2024,1.91,,,Eixample: Comercio suficiente (191% de lo típico) y demanda estable o creciente.
+0812106011,Eixample,CONSOLIDADA,estable,-1.9,-5.0,INE 2015-2024,1.57,,,Eixample: Comercio suficiente (157% de lo típico) y demanda estable o creciente.
+0812106014,Eixample,CONSOLIDADA,estable,0.0,-1.5,INE 2015-2024,1.54,,,Eixample: Comercio suficiente (154% de lo típico) y demanda estable o creciente.
+0812102004,El Palau-Escorxador,CONSOLIDADA,estable,-0.3,9.4,INE 2015-2024,0.95,,,El Palau-Escorxador: Comercio suficiente (95% de lo típico) y demanda estable o creciente.
+0812103007,Els Molins,CONSOLIDADA,estable,-0.5,1.7,INE 2015-2024,1.05,,,Els Molins: Comercio suficiente (105% de lo típico) y demanda estable o creciente.
+0812103008,Els Molins,CONSOLIDADA,estable,-3.2,7.5,INE 2015-2024,1.13,,,Els Molins: Comercio suficiente (113% de lo típico) y demanda estable o creciente.
+0812104001,Els Molins,CONSOLIDADA,crece,5.2,-12.3,INE 2015-2024,1.04,,,Els Molins: Comercio suficiente (104% de lo típico) y demanda estable o creciente.
+0812106005,Peramàs,CONSOLIDADA,estable,-5.1,-7.2,INE 2015-2024,1.2,,,Peramàs: Comercio suficiente (120% de lo típico) y demanda estable o creciente.
+0812106006,Peramàs,CONSOLIDADA,estable,2.2,-7.9,INE 2015-2024,1.44,,,Peramàs: Comercio suficiente (144% de lo típico) y demanda estable o creciente.
+0812106010,Pla D'en Boet,CONSOLIDADA,estable,-2.5,1.0,INE 2015-2024,0.91,,,Pla D'en Boet: Comercio suficiente (91% de lo típico) y demanda estable o creciente.
+0812106012,Pla D'en Boet,CONSOLIDADA,estable,-3.7,1.5,INE 2015-2024,1.3,,,Pla D'en Boet: Comercio suficiente (130% de lo típico) y demanda estable o creciente.
+0812103001,Rocafonda,CONSOLIDADA,crece,7.8,-6.8,INE 2015-2024,0.93,,,Rocafonda: Comercio suficiente (93% de lo típico) y demanda estable o creciente.
+0812103002,Rocafonda,CONSOLIDADA,crece,8.9,4.9,INE 2015-2024,0.95,,,Rocafonda: Comercio suficiente (95% de lo típico) y demanda estable o creciente.
+0812103003,Rocafonda,CONSOLIDADA,crece,4.4,3.8,INE 2015-2024,1.01,,,Rocafonda: Comercio suficiente (101% de lo típico) y demanda estable o creciente.
+0812103004,Rocafonda,CONSOLIDADA,estable,0.7,5.7,INE 2015-2024,1.06,,,Rocafonda: Comercio suficiente (106% de lo típico) y demanda estable o creciente.
+0812103005,Rocafonda,CONSOLIDADA,estable,1.8,6.0,INE 2015-2024,1.04,,,Rocafonda: Comercio suficiente (104% de lo típico) y demanda estable o creciente.
+0812103011,Rocafonda,CONSOLIDADA,estable,2.8,-8.2,INE 2015-2024,0.99,,,Rocafonda: Comercio suficiente (99% de lo típico) y demanda estable o creciente.
+0812103006,Vista Alegre,CONSOLIDADA,estable,-9.2,7.5,Ajuntament 2008-2020 (INE redibujó la sección),1.03,,si,Vista Alegre: Comercio suficiente (103% de lo típico) y demanda estable o creciente.
+0812103013,Vista Alegre,CONSOLIDADA,estable,-3.5,3.6,Ajuntament 2008-2020 (INE redibujó la sección),1.07,,si,Vista Alegre: Comercio suficiente (107% de lo típico) y demanda estable o creciente.
+0812103014,Vista Alegre,CONSOLIDADA,crece,7.9,-1.0,INE 2015-2024,0.92,,,Vista Alegre: Comercio suficiente (92% de lo típico) y demanda estable o creciente.

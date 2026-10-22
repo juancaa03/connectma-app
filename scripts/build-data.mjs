@@ -58,7 +58,7 @@ for (const r of v2) {
   };
   if (r.oportunidad === "si") s.ops.push(o);
   // radar_v2.1: huecos que no son oportunidad pero se enseñan en la ficha
-  else if (r.estado_hueco === "sensible") (s.otros ??= []).push({ ...o, motivo: `Solo aparece con ${r.radios_hueco} radios: a confirmar` });
+  else if (r.estado_hueco === "sensible") (s.otros ??= []).push({ ...o, motivo: r.motivo || `Solo aparece con ${r.radios_hueco} radios: a confirmar` });
   else if (r.estado_hueco === "cubierto") (s.otros ??= []).push({ ...o, motivo: `Cubierto por ${r.cubierto_por}` });
 }
 for (const s of Object.values(porSeccion)) s.ops.sort((a, b) => a.pct - b.pct);
