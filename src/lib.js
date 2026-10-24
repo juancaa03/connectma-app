@@ -7,7 +7,7 @@ export const porCodigo = Object.fromEntries(zonas.map((z) => [z.c, z]));
 export const ESTADOS = {
   POTENCIAL: { nombre: "Potencial", color: "var(--st-potencial)", accion: "informe", orden: 0,
     lectura: "Tiene muy poca oferta de algún tipo de negocio para los vecinos que hay o que llegan." },
-  DECLIVE: { nombre: "Declive", color: "var(--st-declive)", accion: "aixequem", orden: 1,
+  DECLIVE: { nombre: "Declive", color: "var(--st-declive)", accion: "local", orden: 1,
     lectura: "Pierde vecinos y ya le falta comercio." },
   "EN RIESGO": { nombre: "En riesgo", color: "var(--st-riesgo)", accion: "local", orden: 2,
     lectura: "Hoy tiene comercio, pero pierde demanda." },
@@ -37,13 +37,52 @@ export function lecturaLocales(z, locales = []) {
   if (!n) return null;
   if (["DECLIVE", "EN RIESGO"].includes(z.estado) || n >= 3)
     return { tipo: "alerta", titulo: "Posible síntoma de declive",
-      texto: `${n} ${n === 1 ? "local vacío marcado" : "locales vacíos marcados"} en una zona ${n >= 3 ? "donde se acumulan cierres" : "que pierde demanda"}. Vigila si se suman más: es candidata a Aixequem Persianes.` };
+      texto: `${n} ${n === 1 ? "local vacío marcado" : "locales vacíos marcados"} en una zona ${n >= 3 ? "donde se acumulan cierres" : "que pierde demanda"}. Vigila si se suman más: es candidata a las ayudas de reactivación (Aixequem Persianes).` };
   const polo = z.polos?.[0];
   if ((z.indice ?? 0) >= 1 || polo)
     return { tipo: "ubicacion", titulo: "Oportunidad de ubicación a revisar",
       texto: `Local vacío en una zona que funciona (${Math.round((z.indice ?? 0) * 100)} % del comercio de un barrio típico${polo ? `, ${polo.nombre} a ${polo.dist} m` : ""}). Encaja un negocio que complemente lo que ya atrae gente. Antes, revisa por qué está vacío: precio, estado o tamaño.` };
   return { tipo: "ubicacion", titulo: "Local vacío a revisar",
     texto: "Revisa por qué está vacío (precio, estado, tamaño) y si encaja alguno de los tipos por debajo de lo normal en la zona." };
+}
+
+// Veredicto de la zona: lo primero que se lee en la ficha y en el informe.
+// Plantillas fijas a partir de los números: nunca se inventa nada.
+const lista = (xs) => (xs.length <= 1 ? xs.join("") : `${xs.slice(0, -1).join(", ")} y ${xs[xs.length - 1]}`);
+const pctTxt = (n) => `${Math.round(n * 100)} %`;
+
+export function cierresTxt(z) {
+  const p = z.pros;
+  if (!p || p.registros < 10) return null;
+  return `Desde 2023 han cerrado ${p.cierres} de sus ${p.registros} negocios registrados (${p.pctCierres} %${p.mediana != null ? `; en la zona típica, ${p.mediana} %` : ""}) y han abierto ${p.aperturas}.`;
+}
+
+export function veredicto(z) {
+  const ops = z.ops.filter((o) => o.fiable);
+  const tipos = ops.slice(0, 3).map((o) => o.tipo.toLowerCase());
+  const comercio = z.indice == null ? null : pctTxt(z.indice);
+  const demanda = z.demanda === "crece" ? "La zona gana vecinos" : z.demanda === "cae" ? "La zona pierde vecinos" : "La demanda está estable";
+  const cierres = cierresTxt(z);
+  switch (z.estado) {
+    case "POTENCIAL":
+      if (ops.length) {
+        const o = ops[0];
+        return { titulo: `Oportunidad: falta ${lista(tipos)}`,
+          texto: `Para unos ${fmt(z.vecinos)} vecinos a 5 minutos andando hay ${o.oferta} de ${o.tipo.toLowerCase()}, cuando lo normal serían unos ${fmt(o.esperado)} (el ${o.pct} %). ${demanda}.` };
+      }
+      return { titulo: "Zona con poco comercio en general",
+        texto: `Tiene el ${comercio} del comercio de proximidad de una zona típica y ${z.demanda === "crece" ? "gana vecinos" : "la renta sube"}, pero ningún tipo concreto destaca. Conviene comprobarlo a pie de calle.` };
+    case "DECLIVE":
+      return { titulo: "Prioridad de intervención",
+        texto: `${demanda} y ya tiene solo el ${comercio} del comercio de una zona típica. ${cierres ? cierres + " " : ""}Candidata a las ayudas de reactivación (Aixequem Persianes).` };
+    case "EN RIESGO":
+      return { titulo: "Vigilar: hoy tiene comercio, pero pierde demanda",
+        texto: `Tiene el ${comercio} del comercio de una zona típica, pero ${z.demanda === "cae" ? "pierde vecinos" : "la renta se queda atrás"}. ${cierres || "Conviene vigilar los locales que cierran."}` };
+    case "ESTABLE":
+      return { titulo: "Sin señal clara", texto: `Tiene el ${comercio} del comercio de una zona típica y la demanda está estable.` };
+    default:
+      return { titulo: "Zona bien servida", texto: `Tiene el ${comercio} del comercio de una zona típica y la demanda está estable o crece.${ops.length ? ` Aun así, falta ${lista(tipos)}.` : ""}` };
+  }
 }
 
 // Aviso de obra nueva: la población real es mayor que la del INE 2024
@@ -60,7 +99,7 @@ export function avisoObra(z) {
 export const fmt = (n, d = 0) => (n == null ? "—" : n.toLocaleString("es-ES", { maximumFractionDigits: d, minimumFractionDigits: d, useGrouping: "always" }));
 export const pp = (n) => (n == null ? "—" : `${n > 0 ? "+" : n < 0 ? "−" : ""}${fmt(Math.abs(n), 1)} pp`);
 
-// Estado del usuario que solo vive en su navegador (lista Aixequem, locales marcados).
+// Estado del usuario que solo vive en su navegador (locales marcados).
 // En producción iría a la base de datos municipal.
 export function useLocal(clave, inicial) {
   const [v, setV] = useState(() => {

@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { BARRIOS, ESTADOS, TIPOS, avisoObra, lecturaLocales, ordenar, zonas } from "../lib.js";
 import Mapa from "./Mapa.jsx";
 
-export default function Bandeja({ abrir, enLista, marcados }) {
+export default function Bandeja({ abrir, marcados }) {
   const [estado, setEstado] = useState("ACCION");
   const [barrio, setBarrio] = useState("");
   const [tipo, setTipo] = useState("");
@@ -74,7 +74,6 @@ export default function Bandeja({ abrir, enLista, marcados }) {
                   )}
                   <span className="fila-meta">
                     {ops.length > 0 && <span>{ops.length} {ops.length === 1 ? "tipo" : "tipos"} muy por debajo de lo normal</span>}
-                    {enLista.includes(z.c) && <span className="tag">En lista Aixequem</span>}
                     {marcados[z.c]?.length > 0 && <span className={`tag ${lecturaLocales(z, marcados[z.c]).tipo}`}>{lecturaLocales(z, marcados[z.c]).titulo}</span>}
                     {avisoObra(z) && <span className={`tag ${avisoObra(z).tipo}`}>{avisoObra(z).corto}</span>}
                     {z.ctx?.ext?.length > 0 && <span className="tag">Extender: {z.ctx.ext.map((e) => e.tipo).join(", ")}</span>}

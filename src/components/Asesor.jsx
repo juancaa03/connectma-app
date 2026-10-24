@@ -4,9 +4,27 @@ import Mapa from "./Mapa.jsx";
 
 // Asesor para quien emprende: elige qué negocio quiere abrir y, si quiere, en qué barrio.
 // Todo se calcula con los datos del radar; no se guarda ningún perfil.
+// Un local con cierre reciente, como ficha corta: dirección, qué había, cuándo cerró y qué le falta a la zona.
+function Local({ l, z, tipo }) {
+  const mismo = l.tipoAntes && l.tipoAntes === tipo;
+  const faltan = z.ops.map((o) => o.tipo).filter((t) => t !== tipo);
+  const maps = `https://www.google.com/maps/search/?api=1&query=${l.lat},${l.lon}`;
+  return (
+    <li className="local">
+      <p className="local-dir"><b>{l.dir}</b></p>
+      <p>Antes: {l.antes ? l.antes.toLowerCase() : "actividad sin categoría"} · cerró el {l.fecha}</p>
+      {mismo && <p className="local-aviso">Ya hubo {tipo.toLowerCase()} aquí: el local puede estar preparado, pero conviene saber por qué cerró.</p>}
+      {faltan.length > 0 && <p className="local-extra">En esta zona también falta: {faltan.join(", ").toLowerCase()}.</p>}
+      <a href={maps} target="_blank" rel="noreferrer">Ver en el mapa</a>
+    </li>
+  );
+}
+
 export default function Asesor({ abrir, informe }) {
   const [tipo, setTipo] = useState("");
   const [barrio, setBarrio] = useState("");
+  const [abiertas, setAbiertas] = useState({});
+  const verLocales = (c) => setAbiertas((a) => ({ ...a, [c]: !a[c] }));
 
   const candidatas = tipo
     ? zonas
@@ -61,7 +79,20 @@ export default function Asesor({ abrir, informe }) {
                 <h3><button className="link" onClick={() => abrir(z.c)}>{z.barrio}</button> <span className="cod">{z.c}</span></h3>
                 <p className="reco-n">{o.pct} % de lo normal</p>
                 <p>{porque(z, o)}</p>
-                <button className="btn peq" onClick={() => informe(z.c)}>Informe de la zona</button>
+                <div className="reco-acciones">
+                  <button className="btn peq" onClick={() => informe(z.c)}>Informe de la zona</button>
+                  {z.locales?.length > 0 && (
+                    <button className="btn peq" onClick={() => verLocales(z.c)} aria-expanded={!!abiertas[z.c]}>
+                      {abiertas[z.c] ? "Ocultar locales" : `${z.locales.length} ${z.locales.length === 1 ? "local cerrado" : "locales cerrados"} hace poco`}
+                    </button>
+                  )}
+                </div>
+                {abiertas[z.c] && (
+                  <>
+                    <ul className="locales-lista">{z.locales.map((l) => <Local key={l.dir} l={l} z={z} tipo={tipo} />)}</ul>
+                    <p className="nota">Cerraron en 2025–2026 y no consta ninguna actividad nueva en la dirección (registro de prospección del Ajuntament). Comprueba que sigue disponible.</p>
+                  </>
+                )}
               </li>
             ))}</ol>
             {extension.length > 0 && (

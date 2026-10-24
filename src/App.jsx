@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import Aixequem from "./components/Aixequem.jsx";
 import Asesor from "./components/Asesor.jsx";
 import Bandeja from "./components/Bandeja.jsx";
 import Ficha from "./components/Ficha.jsx";
@@ -17,7 +16,6 @@ function leerHash() {
 
 export default function App() {
   const [ruta, setRuta] = useState(leerHash);
-  const [enLista, setEnLista] = useLocal("cma-aixequem", []);
   const [marcados, setMarcados] = useLocal("cma-locales", {});
 
   useEffect(() => {
@@ -33,12 +31,11 @@ export default function App() {
   const abrir = useCallback((c) => ir("zona", c), []);
   const cerrar = useCallback(() => ir(base), [base]);
   const informe = (c) => ir("informe", c);
-  const alternarLista = (c) => setEnLista((l) => (l.includes(c) ? l.filter((x) => x !== c) : [...l, c]));
   const marcar = (c, dir) => setMarcados((m) => ({ ...m, [c]: [...(m[c] || []), { dir, fecha: new Date().toLocaleDateString("es-ES") }] }));
 
   if (ruta.vista === "informe" && ruta.c) return <Informe c={ruta.c} cerrar={() => ir("zona", ruta.c)} />;
 
-  const pestañas = [["bandeja", "Bandeja"], ["mapa", "Mapa"], ["aixequem", `Aixequem${enLista.length ? ` (${enLista.length})` : ""}`], ["asesor", "Asesor"]];
+  const pestañas = [["bandeja", "Bandeja"], ["mapa", "Mapa"], ["asesor", "Asesor"]];
   return (
     <>
       <header className="top">
@@ -55,15 +52,14 @@ export default function App() {
       </header>
       <main>
         {base === "mapa" && <VistaMapa abrir={abrir} />}
-        {base === "aixequem" && <Aixequem enLista={enLista} alternarLista={alternarLista} abrir={abrir} marcados={marcados} />}
         {base === "asesor" && <Asesor abrir={abrir} informe={informe} />}
-        {!["mapa", "aixequem", "asesor"].includes(base) && <Bandeja abrir={abrir} enLista={enLista} marcados={marcados} />}
+        {!["mapa", "asesor"].includes(base) && <Bandeja abrir={abrir} marcados={marcados} />}
       </main>
       <footer className="pie">
         Prototipo de ConnectMA · TecnoChallenge 2026 · Datos abiertos del Ajuntament de Mataró y del INE, agregados por sección censal. <a href={`${WEB}/metodologia`}>Cómo se calcula</a>
       </footer>
       {ruta.vista === "zona" && ruta.c && (
-        <Ficha c={ruta.c} cerrar={cerrar} abrir={abrir} enLista={enLista} alternarLista={alternarLista} marcados={marcados} marcar={marcar} informe={informe} />
+        <Ficha c={ruta.c} cerrar={cerrar} abrir={abrir} marcados={marcados} marcar={marcar} informe={informe} />
       )}
     </>
   );

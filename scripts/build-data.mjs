@@ -1,5 +1,6 @@
 // Convierte la salida del radar (Python) en src/data/zonas.json para la app.
-// Entradas en data/: radar_v3.csv, radar_v2_oportunidades.csv, secciones_mataro.geojson
+// Entradas en data/: radar_v3.csv, radar_v2_oportunidades.csv, secciones_mataro.geojson,
+// contexto_seccion.csv y prospeccion_seccion.csv (opcionales)
 // Uso: npm run datos   (se ejecuta solo con npm run dev / build)
 import fs from "node:fs";
 
@@ -53,7 +54,8 @@ for (const r of v2) {
   const o = {
     tipo: CORTO[r.tipo] || r.tipo,
     oferta: num(r.oferta), esperado: num(r.esperado), faltan: num(r.faltan),
-    pct: num(r.esperado) ? Math.round((100 * num(r.oferta)) / num(r.esperado)) : null,
+    // Mismo redondeo que el radar (ratio_oferta), para que la tabla y el texto de la ficha den el mismo %
+    pct: r.ratio_oferta !== "" ? Math.round(100 * num(r.ratio_oferta)) : null,
     p: num(r.p_azar), fiable: r.confianza_dato !== "baja",
   };
   if (r.oportunidad === "si") s.ops.push(o);
@@ -62,6 +64,13 @@ for (const r of v2) {
   else if (r.estado_hueco === "cubierto") (s.otros ??= []).push({ ...o, motivo: `Cubierto por ${r.cubierto_por}` });
 }
 for (const s of Object.values(porSeccion)) s.ops.sort((a, b) => a.pct - b.pct);
+// Lo que ya hay de sobra (competencia): tipos con al menos 1,5 veces lo normal y 3 negocios o más
+for (const r of v2) {
+  const ratio = num(r.ratio_oferta);
+  if (ratio != null && ratio >= 1.5 && num(r.oferta) >= 3 && r.tipo !== "bar/cafetería/restaurante" && porSeccion[r.cusec])
+    (porSeccion[r.cusec].sobra ??= []).push({ tipo: CORTO[r.tipo] || r.tipo, oferta: num(r.oferta), pct: Math.round(100 * ratio) });
+}
+for (const s of Object.values(porSeccion)) s.sobra?.sort((a, b) => b.pct - a.pct);
 
 // Geometría: misma proyección que la web
 const secc = JSON.parse(fs.readFileSync("data/secciones_mataro.geojson", "utf8")).features
@@ -115,6 +124,32 @@ const ctx = Object.fromEntries(ctxCSV.map((r) => [r.cusec, {
   }),
 }]));
 
+// Registro de prospección del Ajuntament (prospeccion.py): cierres y aperturas medidos desde 2023.
+// Solo cifras por sección: las direcciones no salen del radar.
+const prosCSV = fs.existsSync("data/prospeccion_seccion.csv") ? leerCSV("data/prospeccion_seccion.csv") : [];
+const pros = Object.fromEntries(prosCSV.map((r) => [r.cusec, {
+  registros: num(r.registros), abiertos: num(r.abiertos), cierres: num(r.cierres_2023), aperturas: num(r.aperturas_2023),
+  pctCierres: num(r.pct_cierres), localesCierre: num(r.locales_cierre_reciente),
+}]));
+const pctCiudad = prosCSV.filter((r) => num(r.registros) >= 10).map((r) => num(r.pct_cierres)).sort((a, b) => a - b);
+const medianaCierres = pctCiudad.length ? pctCiudad[Math.floor(pctCiudad.length / 2)] : null;
+
+// Posibles locales vacíos (prospeccion.py): cierre en 2025-2026 sin actividad nueva en la misma dirección.
+// Base del asesor: dirección, qué había y cuándo cerró. Nunca el nombre del negocio.
+const TIPO_ANTES = [
+  [/forn de pa|fleca|pastisseria/i, "Panadería"], [/carnisseria|xarcuteria/i, "Carnicería"],
+  [/supermercat|queviures|comestibles/i, "Supermercado"], [/perruqueria \/ barberia|est[eè]tica/i, "Peluquería y estética"],
+  [/serveis de salut/i, "Salud"], [/restaurant|bar \/ cafeteria/i, "Hostelería"], [/ferreteria/i, "Ferretería"],
+  [/floristeria/i, "Floristería"], [/papereria|llibreria/i, "Librería y papelería"], [/basar/i, "Bazar"],
+  [/m[oò]bils|electrodom|locutori/i, "Electrónica y reparación"], [/[oò]ptica/i, "Óptica"],
+];
+const localesCSV = fs.existsSync("data/locales_vacios.csv") ? leerCSV("data/locales_vacios.csv") : [];
+const localesPor = {};
+for (const r of localesCSV) (localesPor[r.cusec] ??= []).push({
+  dir: r.direccion, lon: num(r.lon), lat: num(r.lat), antes: r.antes, fecha: r.fecha_cierre,
+  tipoAntes: (TIPO_ANTES.find(([rx]) => rx.test(r.antes)) || [])[1] || null,
+});
+
 const zonas = v3.map((r) => {
   const s = porSeccion[r.cusec] || { ops: [] };
   return {
@@ -133,14 +168,27 @@ const zonas = v3.map((r) => {
     pct65: s.pct65,
     ops: s.ops,
     otros: s.otros || [],
+    sobra: s.sobra || [],
     polos: polosCerca(r.cusec),
     ctx: ctx[r.cusec] || null,
+    pros: pros[r.cusec] ? { ...pros[r.cusec], mediana: medianaCierres } : null,
+    locales: localesPor[r.cusec] || [],
   };
+});
+
+// Locales con cierre reciente y sin actividad nueva (prospeccion.py): base del asesor de locales.
+// Se proyectan con la misma escala que el mapa para pintarlos como puntos.
+const locCSV = fs.existsSync("data/locales_vacios.csv") ? leerCSV("data/locales_vacios.csv") : [];
+const enZona = new Set(zonas.map((z) => z.c));
+const locales = locCSV.filter((r) => enZona.has(r.cusec)).map((r, i) => {
+  const [x, y] = P([Number(r.lon), Number(r.lat)]);
+  return { id: i, c: r.cusec, dir: r.direccion, antes: r.antes, cierre: r.fecha_cierre,
+    x: +((x - minX) * k).toFixed(1), y: +((y - minY) * k).toFixed(1) };
 });
 
 const fuera = Object.entries(geo).filter(([c]) => !zonas.some((z) => z.c === c)).map(([c]) => c);
 fs.mkdirSync("src/data", { recursive: true });
-fs.writeFileSync("src/data/zonas.json", JSON.stringify({ w: W, h: H, geo, zonas, fuera }));
+fs.writeFileSync("src/data/zonas.json", JSON.stringify({ w: W, h: H, geo, zonas, fuera, locales }));
 
 const cuenta = zonas.reduce((m, z) => ((m[z.estado] = (m[z.estado] || 0) + 1), m), {});
-console.log(`zonas.json: ${zonas.length} zonas`, cuenta, `| ${zonas.reduce((t, z) => t + z.ops.length, 0)} oportunidades | ${fuera.length} rurales`);
+console.log(`zonas.json: ${zonas.length} zonas`, cuenta, `| ${zonas.reduce((t, z) => t + z.ops.length, 0)} oportunidades | ${fuera.length} rurales | ${locales.length} locales con cierre reciente`);

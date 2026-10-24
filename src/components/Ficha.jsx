@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { ESTADOS, fmt, lecturaLocales, porCodigo, pp } from "../lib.js";
+import { ESTADOS, avisoObra, fmt, lecturaLocales, porCodigo, pp, veredicto } from "../lib.js";
 import Contexto from "./Contexto.jsx";
 import Mapa from "./Mapa.jsx";
 
-export default function Ficha({ c, cerrar, abrir, enLista, alternarLista, marcados, marcar, informe }) {
+// Ficha para la técnica de Comerç: primero el veredicto y la acción; los detalles, plegados.
+export default function Ficha({ c, cerrar, abrir, marcados, marcar, informe }) {
   const z = porCodigo[c];
   const ref = useRef(null);
   const [formLocal, setFormLocal] = useState(false);
@@ -16,8 +17,12 @@ export default function Ficha({ c, cerrar, abrir, enLista, alternarLista, marcad
   }, [cerrar]);
   if (!z) return null;
   const e = ESTADOS[z.estado];
-  const locales = marcados[c] || [];
-  const propuesta = enLista.includes(c);
+  const v = veredicto(z);
+  const obra = avisoObra(z);
+  const marcadosAqui = marcados[c] || [];
+  const lectura = lecturaLocales(z, marcadosAqui);
+  const fiables = z.ops.filter((o) => o.fiable);
+  const accionLocal = e.accion === "local";
 
   return (
     <div className="velo" onClick={cerrar}>
@@ -29,69 +34,84 @@ export default function Ficha({ c, cerrar, abrir, enLista, alternarLista, marcad
           <button className="cerrar" onClick={cerrar} aria-label="Cerrar ficha">Cerrar</button>
         </header>
 
-        <p className="ficha-texto">{z.ficha}</p>
-        <Mapa seleccion={c} alto="220px" onSelect={abrir} etiqueta={`Ubicación de ${z.barrio}`} />
+        <section className="veredicto">
+          <h3>{v.titulo}</h3>
+          <p>{v.texto}</p>
+          {obra?.tipo === "alerta" && <p className="veredicto-aviso"><b>{obra.corto}.</b> {obra.texto}</p>}
+          <div className="acciones">
+            <button className={`btn${accionLocal ? "" : " principal"}`} onClick={() => informe(c)}>Generar informe para emprendedor</button>
+            <button className={`btn${accionLocal ? " principal" : ""}`} onClick={() => setFormLocal((x) => !x)} aria-expanded={formLocal}>Marcar local vacío</button>
+          </div>
+          {formLocal && (
+            <form className="form-local" onSubmit={(ev) => { ev.preventDefault(); if (dir.trim()) { marcar(c, dir.trim()); setDir(""); setFormLocal(false); } }}>
+              <label>Dirección del local
+                <input value={dir} onChange={(ev) => setDir(ev.target.value)} placeholder="p. ej. Carrer de Cuba, 45" autoFocus />
+              </label>
+              <button className="btn principal" type="submit">Guardar local vacío</button>
+              <p className="nota">Prototipo: se guarda en este navegador. En el servicio real alimentaría el registro municipal.</p>
+            </form>
+          )}
+          {marcadosAqui.length > 0 && (
+            <ul className="locales">{marcadosAqui.map((l, i) => <li key={i}>Local vacío: {l.dir} <small>({l.fecha})</small></li>)}</ul>
+          )}
+          {lectura && <div className={`lectura ${lectura.tipo}`} role="status"><b>{lectura.titulo}.</b> {lectura.texto}</div>}
+        </section>
 
-        <dl className="datos">
-          <div><dt>Vecinos a 450 m</dt><dd>{fmt(z.vecinos)}</dd></div>
-          <div><dt>Comercio de proximidad</dt><dd>{z.indice == null ? "—" : `${fmt(z.indice * 100)} %`}<small>de un barrio típico</small></dd></div>
-          <div><dt>Población</dt><dd>{pp(z.pobRel)}<small>vs barrio típico</small></dd></div>
-          <div><dt>Renta por persona</dt><dd>{pp(z.rentaRel)}<small>vs barrio típico</small></dd></div>
+        <Mapa seleccion={c} alto="200px" onSelect={abrir} etiqueta={`Ubicación de ${z.barrio}`} />
+
+        <dl className="datos tres">
+          <div><dt>Vecinos a 5 min</dt><dd>{fmt(z.vecinos)}</dd><small>a 450 m andando</small></div>
+          <div><dt>Comercio de proximidad</dt><dd>{z.indice == null ? "—" : `${fmt(z.indice * 100)} %`}</dd><small>de una zona típica</small></div>
+          <div><dt>Cierres desde 2023</dt>
+            {z.pros?.registros >= 10
+              ? <><dd>{z.pros.pctCierres} %</dd><small>{z.pros.cierres} de {z.pros.registros}{z.pros.mediana != null ? ` · típica ${z.pros.mediana} %` : ""}</small></>
+              : <><dd>—</dd><small>pocos registros</small></>}
+          </div>
         </dl>
-        {z.polos?.length > 0 && <p className="cerca">Cerca: {z.polos.map((p) => `${p.nombre} (${p.dist} m)`).join(" · ")}</p>}
-        {z.revisar && <p className="aviso">El INE cambió los límites de esta sección: la tendencia de población usa la serie municipal 2008–2020.</p>}
 
-        {z.ops.length > 0 && (
+        {fiables.length > 0 && (
           <>
-            <h3>Muy por debajo de lo normal</h3>
+            <h3>Qué falta</h3>
             <table className="ops">
               <thead><tr><th>Tipo</th><th className="n">Hay</th><th className="n">Lo normal</th><th className="n">% de lo normal</th></tr></thead>
-              <tbody>
-                {z.ops.map((o) => (
-                  <tr key={o.tipo} className={o.fiable ? "" : "dudoso"}>
-                    <td>{o.tipo}{!o.fiable && <small> · dato poco fiable</small>}</td>
-                    <td className="n">{o.oferta}</td><td className="n">{fmt(o.esperado)}</td><td className="n"><b>{o.pct} %</b></td>
-                  </tr>
-                ))}
-              </tbody>
+              <tbody>{fiables.map((o) => (
+                <tr key={o.tipo}><td>{o.tipo}</td><td className="n">{o.oferta}</td><td className="n">{fmt(o.esperado)}</td><td className="n"><b>{o.pct} %</b></td></tr>
+              ))}</tbody>
             </table>
           </>
         )}
 
-        <Contexto z={z} abrir={abrir} />
-
-        {z.otros?.length > 0 && (
-          <>
-            <h3>A confirmar</h3>
-            <ul className="otros">{z.otros.map((o) => <li key={o.tipo}><b>{o.tipo}</b> ({o.pct} % de lo normal). {o.motivo}.</li>)}</ul>
-          </>
+        {z.locales?.length > 0 && (
+          <details className="plegable">
+            <summary>{z.locales.length} {z.locales.length === 1 ? "local cerró" : "locales cerraron"} en 2025–2026 sin actividad nueva</summary>
+            <ul className="locales-lista">{z.locales.map((l) => (
+              <li key={l.dir} className="local">
+                <p className="local-dir"><b>{l.dir}</b></p>
+                <p>Antes: {l.antes ? l.antes.toLowerCase() : "sin categoría"} · cerró el {l.fecha}</p>
+              </li>
+            ))}</ul>
+            <p className="nota">Registro de prospección del Ajuntament. Posibles locales vacíos: comprobar a pie de calle.</p>
+          </details>
         )}
 
-        <h3>Qué hacer</h3>
-        <div className="acciones">
-          <button className={`btn${e.accion === "informe" ? " principal" : ""}`} onClick={() => informe(c)}>Generar informe para emprendedor</button>
-          <button className={`btn${e.accion === "aixequem" ? " principal" : ""}${propuesta ? " hecho" : ""}`} onClick={() => alternarLista(c)} aria-pressed={propuesta}>
-            {propuesta ? "Propuesta para Aixequem Persianes" : "Proponer para Aixequem Persianes"}
-          </button>
-          <button className={`btn${e.accion === "local" ? " principal" : ""}`} onClick={() => setFormLocal((v) => !v)} aria-expanded={formLocal}>Marcar local vacío</button>
-        </div>
-
-        {formLocal && (
-          <form className="form-local" onSubmit={(ev) => { ev.preventDefault(); if (dir.trim()) { marcar(c, dir.trim()); setDir(""); setFormLocal(false); } }}>
-            <label>Dirección del local
-              <input value={dir} onChange={(ev) => setDir(ev.target.value)} placeholder="p. ej. Carrer de Cuba, 45" autoFocus />
-            </label>
-            <button className="btn principal" type="submit">Guardar local vacío</button>
-            <p className="nota">Prototipo: se guarda en este navegador. En el servicio real alimenta el censo municipal y el declive pasa a medirse con cierres.</p>
-          </form>
-        )}
-        {locales.length > 0 && (
-          <ul className="locales">{locales.map((l, i) => <li key={i}>Local vacío: {l.dir} <small>({l.fecha})</small></li>)}</ul>
-        )}
-        {(() => {
-          const l = lecturaLocales(z, locales);
-          return l && <div className={`lectura ${l.tipo}`} role="status"><b>{l.titulo}.</b> {l.texto}</div>;
-        })()}
+        <details className="plegable">
+          <summary>Más datos de la zona</summary>
+          <dl className="datos">
+            <div><dt>Población 2015–2024</dt><dd>{pp(z.pobRel)}</dd><small>vs zona típica</small></div>
+            <div><dt>Renta por persona</dt><dd>{pp(z.rentaRel)}</dd><small>vs zona típica</small></div>
+          </dl>
+          {z.pros?.registros >= 10 && <p className="nota">Aperturas desde 2023: {z.pros.aperturas}. El registro anota mejor los cierres que las aperturas de negocios antiguos: sirve para comparar zonas entre sí.</p>}
+          {z.polos?.length > 0 && <p className="cerca">Cerca: {z.polos.map((p) => `${p.nombre} (${p.dist} m)`).join(" · ")}</p>}
+          {z.revisar && <p className="aviso">El INE cambió los límites de esta sección: la tendencia de población usa la serie municipal 2008–2020.</p>}
+          {z.sobra?.length > 0 && <p>Ya hay de sobra: {z.sobra.map((s) => `${s.tipo.toLowerCase()} (${s.pct} % de lo normal)`).join(", ")}.</p>}
+          <Contexto z={z} abrir={abrir} />
+          {z.otros?.length > 0 && (
+            <>
+              <h3>A confirmar</h3>
+              <ul className="otros">{z.otros.map((o) => <li key={o.tipo}><b>{o.tipo}</b> ({o.pct} % de lo normal). {o.motivo}.</li>)}</ul>
+            </>
+          )}
+        </details>
       </aside>
     </div>
   );
