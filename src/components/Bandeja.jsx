@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { BARRIOS, ESTADOS, TIPOS, avisoObra, lecturaLocales, ordenar, zonas } from "../lib.js";
+import { BARRIOS, ESTADOS, TIPOS, avisoObra, lecturaLocales, ordenar, rotacionAlta, veredicto, zonas } from "../lib.js";
 import Mapa from "./Mapa.jsx";
 
 export default function Bandeja({ abrir, marcados }) {
@@ -64,7 +64,7 @@ export default function Bandeja({ abrir, marcados }) {
                 <button className="fila" style={{ "--c": e.color }} onClick={() => abrir(z.c)}>
                   <span className="fila-estado"><span className="dot" />{e.nombre}</span>
                   <span className="fila-barrio">{z.barrio} <span className="cod">{z.c}</span></span>
-                  <span className="fila-ficha">{z.ficha}</span>
+                  <span className="fila-ficha">{veredicto(z).texto}</span>
                   {ops.length > 0 && (
                     <span className="huecos">
                       {ops.slice(0, 4).map((o) => (
@@ -76,8 +76,9 @@ export default function Bandeja({ abrir, marcados }) {
                     {ops.length > 0 && <span>{ops.length} {ops.length === 1 ? "tipo" : "tipos"} muy por debajo de lo normal</span>}
                     {marcados[z.c]?.length > 0 && <span className={`tag ${lecturaLocales(z, marcados[z.c]).tipo}`}>{lecturaLocales(z, marcados[z.c]).titulo}</span>}
                     {avisoObra(z) && <span className={`tag ${avisoObra(z).tipo}`}>{avisoObra(z).corto}</span>}
+                    {rotacionAlta(z) && <span className="tag alerta">Rotación alta: {z.pros.pctCierres} % de cierres desde 2023</span>}
                     {z.ctx?.ext?.length > 0 && <span className="tag">Extender: {z.ctx.ext.map((e) => e.tipo).join(", ")}</span>}
-                    {z.revisar && <span className="tag gris">Límites revisados</span>}
+                    {z.revisar && <span className="tag gris">Datos de población a revisar</span>}
                   </span>
                 </button>
               </li>

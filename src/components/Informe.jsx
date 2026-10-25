@@ -1,4 +1,4 @@
-import { ESTADOS, fmt, porCodigo, pp, veredicto } from "../lib.js";
+import { ESTADOS, fmt, porCodigo, rotacionAlta, vecinosTxt, veredicto } from "../lib.js";
 import Contexto from "./Contexto.jsx";
 import Mapa from "./Mapa.jsx";
 
@@ -12,6 +12,7 @@ export default function Informe({ c, cerrar }) {
   const hoy = new Date().toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
   const fiables = z.ops.filter((o) => o.fiable);
   const locales = (z.locales || []).slice(0, 5);
+  const vec = vecinosTxt(z);
   return (
     <div className="informe-capa">
       <div className="informe-barra no-print">
@@ -38,10 +39,10 @@ export default function Informe({ c, cerrar }) {
           <dl className="datos">
             <div><dt>Vecinos a 5 min andando</dt><dd>{fmt(z.vecinos)}</dd><small>a 450 m</small></div>
             <div><dt>Comercio de proximidad</dt><dd>{z.indice == null ? "—" : `${fmt(z.indice * 100)} %`}</dd><small>de una zona típica</small></div>
-            <div><dt>Población 2015–2024</dt><dd>{pp(z.pobRel)}</dd><small>vs zona típica</small></div>
+            <div><dt>Vecinos</dt><dd>{vec.valor}</dd><small>{vec.nota}</small></div>
             <div><dt>Cierres desde 2023</dt>
               {z.pros?.registros >= 10
-                ? <><dd>{z.pros.pctCierres} %</dd><small>{z.pros.cierres} de {z.pros.registros}{z.pros.mediana != null ? ` · típica ${z.pros.mediana} %` : ""}</small></>
+                ? <><dd>{z.pros.pctCierres} %</dd><small>{z.pros.cierres} de {z.pros.registros} negocios{z.pros.mediana != null ? ` · zona típica ${z.pros.mediana} %` : ""}</small>{rotacionAlta(z) && <small className="rot">Rotación alta</small>}</>
                 : <><dd>—</dd><small>pocos registros</small></>}
             </div>
           </dl>
@@ -67,11 +68,11 @@ export default function Informe({ c, cerrar }) {
 
         {locales.length > 0 && (
           <>
-            <h2>Locales que han cerrado hace poco</h2>
+            <h2>Locales cerrados sin actividad nueva</h2>
             <ul className="inf-locales">{locales.map((l) => (
               <li key={l.dir}><b>{l.dir}</b> · antes, {l.antes ? l.antes.toLowerCase() : "sin categoría"} · cerró el {l.fecha}</li>
             ))}</ul>
-            <p className="nota">Cierres de 2025–2026 sin actividad nueva registrada en la dirección{z.locales.length > locales.length ? ` (${z.locales.length} en total en la zona)` : ""}. Comprueba que siguen disponibles.</p>
+            <p className="nota">Cerrados desde 2023 y sin actividad nueva registrada en la dirección; los más recientes primero{z.locales.length > locales.length ? ` (${z.locales.length} en total en la zona)` : ""}. Comprueba que siguen disponibles.</p>
           </>
         )}
 

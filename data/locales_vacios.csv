@@ -5,23 +5,34 @@ cusec,direccion,lon,lat,antes,fecha_cierre
 0812101001,"Carrer de Cosme Churruca, 17",2.443677,41.53483,Gestoria i assessoria,05/09/2025
 0812101001,"Carrer de Cosme Churruca, 57",2.444601,41.534098,Restaurant / Bar restaurant,14/10/2025
 0812101001,"Carrer de Cuba, 29",2.441303,41.536698,Merceria i llenceria,09/07/2026
+0812101001,"Carrer de Cuba, 35",2.441411,41.536612,Bosses i complements,17/06/2024
 0812101001,"Carrer de Federico Carlo Gravina, 11",2.445312,41.535057,Eròtics,03/09/2025
 0812101001,"Carrer de Federico Carlo Gravina, 1B",2.445865,41.535427,Restaurant / Bar restaurant,15/07/2026
 0812101001,"Carrer de Federico Carlo Gravina, 4",2.445517,41.535315,Supermercat / cooperatives de consum,03/09/2025
 0812101001,"Carrer de Lepant, 23",2.444422,41.535739,Instal·lacions i submnistraments,03/09/2025
 0812101001,"Carrer de Lepant, 59",2.445223,41.534974,Fruita i verdura,14/10/2025
+0812101001,"Carrer de Montserrat, 28",2.442211,41.537738,Merceria i llenceria,17/11/2023
 0812101001,"Carrer de Sant Agustí, 4",2.444719,41.53692,Perruqueria / barberia,03/09/2025
 0812101001,"Carrer de Sant Agustí, 64",2.446173,41.535267,Supermercat / cooperatives de consum,03/09/2025
+0812101001,"Carrer de Sant Benet, 25",2.440508,41.538353,Informàtica / mòbils i complements,12/06/2024
+0812101001,"Carrer de Sant Joaquim, 51",2.441272,41.537724,Carnisseria / Xarcuteria / Polleria / aus / conills,01/03/2024
+0812101001,"Carrer de Sant Joaquim, 59",2.441416,41.537582,Rostisseria i Menjar preparat,07/05/2024
+0812101001,"Plaça de Cuba, 24",2.440918,41.537013,Rostisseria i Menjar preparat,01/04/2023
 0812101001,"Plaça de les Tereses, 25",2.441833,41.5381,Escoles i acadèmies,23/10/2025
 0812101001,"Plaça de les Tereses, 27",2.44175,41.53818,"Llar, decoració i mobiliari",23/10/2025
 0812101002,"Avinguda del Maresme, 277",2.447783,41.5356,Serveis de lleure,28/10/2025
 0812101002,"Avinguda del Maresme, 279",2.447836,41.535644,Taller mecànic,28/10/2025
 0812101002,"Baixada de Santa Anna, 16",2.445598,41.537798,Clínica veterinària i perruqueria canina,05/03/2026
 0812101002,"Baixada de Santa Anna, 2",2.445153,41.538038,"Joieria, rellotgeria i bijuteria",05/03/2026
+0812101002,"Baixada de Santa Anna, 4",2.445264,41.537978,llaminadures,16/02/2024
 0812101002,"Camí Ral, 307",2.447011,41.538159,Reparacions,05/11/2025
+0812101002,"Carrer de Damià Campeny, 34",2.447405,41.536374,Esotèrics,11/06/2024
 0812101002,"Carrer de Damià Campeny, 36",2.447503,41.536468,Tintoreria i bugaderia,05/09/2025
 0812101002,"Carrer de Sant Agustí, 55",2.445806,41.535792,Gimnàs i esport,04/11/2025
 0812101002,"Carrer de Sant Antoni, 4",2.446008,41.537569,Clínica veterinària i perruqueria canina,05/03/2026
+0812101002,"Carrer de Sant Antoni, 61",2.447945,41.536601,Professionals construcció,01/01/2023
+0812101002,"Carrer de Sant Antoni, 79",2.448403,41.53635,Instal·lacions i submnistraments,24/02/2023
+0812101002,"Carrer de Sant Joan, 2",2.447714,41.538328,Perruqueria / barberia,11/06/2024
 0812101003,"Camí Ral, 324",2.446563,41.538058,Forn de pa / Fleca,13/05/2025
 0812101003,"Carrer El Carreró, 24",2.446205,41.540245,Perruqueria / barberia,15/05/2025
 0812101003,"Carrer El Carreró, 9",2.445039,41.539992,Restaurant / Bar restaurant,15/10/2025
@@ -29,12 +40,15 @@ cusec,direccion,lon,lat,antes,fecha_cierre
 0812101003,"Carrer La Riera, 26",2.444951,41.539076,Roba i complements,16/09/2026
 0812101003,"Carrer La Riera, 38",2.444898,41.539409,Calçat i pell,27/01/2025
 0812101003,"Carrer La Riera, 68",2.444414,41.540519,Òptica / Audífons / Ortopèdia,16/09/2026
+0812101003,"Carrer Nou, 23",2.445174,41.540941,Roba i complements,10/04/2024
 0812101003,"Carrer Nou, 25",2.445238,41.540938,Professionals construcció,24/09/2026
 0812101003,"Carrer Nou, 35",2.445761,41.540836,"Drogueria, perfumeria i cosmètica",16/07/2025
 0812101003,"Carrer Nou, 40",2.445445,41.540861,"Llar, decoració i mobiliari",24/09/2026
 0812101003,"Carrer d'En Pujol, 12",2.445502,41.539223,Perruqueria / barberia,01/01/2025
+0812101003,"Carrer d'En Pujol, 6",2.44529,41.539197,Restaurant / Bar restaurant,19/01/2024
 0812101003,"Carrer d'En Pujol, 8",2.445344,41.539204,Restaurant / Bar restaurant,01/01/2025
 0812101003,"Carrer de Barcelona, 18",2.445522,41.538438,Roba i complements,14/09/2026
+0812101003,"Carrer de Barcelona, 19",2.445729,41.538576,Bar / cafeteria / granja / Forn de pa - degustació,19/12/2023
 0812101003,"Carrer de Barcelona, 23",2.445829,41.538617,Roba i complements,12/02/2026
 0812101003,"Carrer de Barcelona, 24",2.445699,41.538515,Restaurant / Bar restaurant,23/03/2026
 0812101003,"Carrer de Barcelona, 31",2.446058,41.538701,"Joieria, rellotgeria i bijuteria",14/09/2026
@@ -42,66 +56,110 @@ cusec,direccion,lon,lat,antes,fecha_cierre
 0812101003,"Carrer de Barcelona, 47",2.446526,41.538876,Roba i complements,29/01/2025
 0812101003,"Carrer de Bonaire, 17",2.44491,41.541437,Estètica / bellesa / benestar,20/05/2025
 0812101003,"Carrer de Bonaire, 6B",2.444805,41.541371,Roba i complements,20/05/2025
+0812101003,"Carrer de Sant Francesc d'Assís, 8",2.446027,41.541548,Farmàcies i parafarmàcies,26/01/2024
+0812101004,"Carrer El Torrent, 19",2.441168,41.539711,Immobiliària,19/07/2024
+0812101004,"Carrer El Torrent, 21",2.441211,41.539675,Restaurant / Bar restaurant,28/03/2024
 0812101004,"Carrer El Torrent, 35",2.441526,41.539407,"Arranjament de roba, sabates, claus i tapisseria",11/03/2026
 0812101004,"Carrer La Riera, 31",2.444773,41.539231,Electrodomèstics,24/07/2026
+0812101004,"Carrer La Riera, 37I",2.444676,41.539499,Roba i complements,16/01/2024
 0812101004,"Carrer La Riera, 5",2.444833,41.538431,Informàtica / mòbils i complements,27/01/2025
 0812101004,"Carrer Muralla de Sant Llorenç, 14B",2.4437,41.538812,Restaurant / Bar restaurant,10/07/2025
 0812101004,"Carrer Muralla de Sant Llorenç, 28",2.444218,41.538525,"Llar, decoració i mobiliari",09/09/2026
 0812101004,"Carrer Muralla de Sant Llorenç, 31",2.4444,41.538531,Banca i serveis financers,10/07/2025
 0812101004,"Carrer d'En Moles, 4",2.443167,41.540697,Estètica / bellesa / benestar,19/11/2025
 0812101004,"Carrer de Montserrat, 17",2.442461,41.537588,"Llar, decoració i mobiliari",04/02/2025
+0812101004,"Carrer de Montserrat, 21",2.442536,41.537517,Bar de copes / discoteca,04/06/2024
 0812101004,"Carrer de Montserrat, 35",2.442801,41.537265,Electrodomèstics,16/02/2026
 0812101004,"Carrer de Sant Josep, 27",2.442598,41.539139,Roba i complements,17/02/2025
+0812101004,"Carrer de Sant Josep, 50",2.442576,41.539197,Roba i complements,15/07/2024
+0812101004,"Carrer de Santa Marta, 37",2.443558,41.537653,Restaurant / Bar restaurant,26/06/2024
 0812101004,"Carrer de Santa Teresa, 43",2.443548,41.538272,Geladeria / Xurreria,01/09/2026
 0812101004,"Carrer de Santa Teresa, 59",2.443984,41.538076,Forn de pa / Fleca,31/08/2026
 0812101005,"Carrer Caminet de Les Vinyes, 17",2.442315,41.541783,Gimnàs i esport,31/10/2025
 0812101005,"Carrer Caminet de Les Vinyes, 28",2.44248,41.541693,Fruita i verdura,31/10/2025
+0812101005,"Carrer Caminet de Les Vinyes, 42",2.442358,41.541956,"Papereria, llibreria",20/10/2023
 0812101005,"Carrer d'Argentona, 10",2.443587,41.541132,Professionals construcció,01/01/2025
 0812101005,"Carrer d'Argentona, 40",2.442429,41.540974,Agència de viatges,31/07/2025
+0812101005,"Carrer d'Argentona, 8",2.443649,41.541138,"Papereria, llibreria",15/07/2024
 0812101005,"Carrer de Guifré el Pelós, 70",2.440526,41.543658,Serveis de salut,20/11/2025
 0812101005,"Carrer del Parc, 44",2.442132,41.542436,Escoles i acadèmies,31/10/2025
+0812101005,"Plaça d'Espanya, 20",2.441463,41.544216,Serveis de salut,16/10/2023
 0812101006,"Carrer d'Emili Cabañes, 14",2.438274,41.541268,Immobiliària,19/11/2025
+0812101006,"Carrer de Jaume Isern, 34",2.439071,41.540657,Immobiliària,19/07/2024
+0812101006,"Carrer de Jaume Isern, 88",2.437277,41.54061,Ludoteca,22/07/2024
 0812101006,"Carrer de Roger de Flor, 51",2.438355,41.541543,Taller mecànic,31/10/2025
 0812101006,"Carrer de Sant Isidor, 1",2.440001,41.540829,Roba i complements,31/10/2025
+0812101006,"Carrer de Sant Isidor, 3",2.439892,41.541266,Gestoria i assessoria,19/10/2023
+0812101007,"Carrer El Torrent, 16",2.440442,41.540263,"Artesania, art i col·lecció",02/01/2023
+0812101007,"Carrer de Catalunya, 18",2.439191,41.53979,Taller mecànic,21/06/2024
 0812101007,"Carrer de Fra Luis de León, 1",2.439093,41.538363,Estètica / bellesa / benestar,08/09/2025
 0812101007,"Carrer de Fra Luis de León, 21",2.438762,41.538719,Altres professionals,03/12/2025
+0812101007,"Carrer de Fra Luis de León, 7",2.438988,41.538455,Pastisseria i bomboneria,15/07/2024
 0812101007,"Carrer de Jaume Isern, 23",2.439166,41.540475,Estètica / bellesa / benestar,20/11/2025
+0812101007,"Carrer de Jaume Isern, 5",2.440033,41.540503,Immobiliària,19/07/2024
+0812101007,"Carrer de Jaume Isern, 55",2.43722,41.540427,Càtering,21/06/2024
+0812101007,"Carrer de Jaume Isern, 69",2.436797,41.540417,Electrodomèstics,22/07/2024
+0812101007,"Carrer de Sant Benet, 32",2.440081,41.538312,Roba i complements,09/07/2024
 0812101007,"Carrer de Sant Benet, 70",2.438882,41.53804,Immobiliària,01/01/2025
 0812101007,"Carrer de Sant Benet, 72",2.438841,41.538032,Estètica / bellesa / benestar,31/01/2025
+0812101007,"Carrer de Sant Benet, 76",2.438714,41.538007,Estancs i articles per a fumadors,01/01/2023
+0812101007,"Carrer de Sant Joaquim, 15",2.440018,41.538961,Reparacions,07/06/2024
+0812101007,"Carrer de Tetuan, 34",2.437577,41.539131,Copistèria i Arts Gràfiques,09/05/2023
+0812101009,"Camí de la Geganta, 25",2.440048,41.543762,Bar / cafeteria / granja / Forn de pa - degustació,16/10/2023
 0812101009,"Camí de la Geganta, 27",2.439958,41.543693,Estètica / bellesa / benestar,29/10/2025
 0812101009,"Carrer de Guifré el Pelós, 57",2.440581,41.54312,Escoles i acadèmies,20/11/2025
 0812101009,"Carrer de Sant Isidor, 35",2.439699,41.542045,Estètica / bellesa / benestar,31/10/2025
 0812101009,"Carrer de Sant Isidor, 65",2.439519,41.54277,Estètica / bellesa / benestar,31/10/2025
 0812101009,"Carrer de Sant Isidor, 70",2.439586,41.542999,Taller mecànic,31/10/2025
+0812101009,"Passatge dels Sisternes, 14",2.439924,41.543038,Altres professionals,21/06/2024
 0812102001,"Avinguda del Maresme, 389",2.451365,41.537912,Professionals construcció,28/10/2025
 0812102001,"Camí Ral, 125",2.45228,41.540569,Fruita i verdura,04/11/2025
 0812102001,"Camí Ral, 161",2.451059,41.539808,Oficines de correus / servei missatgeria i transport,24/02/2025
+0812102001,"Camí Ral, 235",2.449343,41.539106,Fruita i verdura,10/04/2024
+0812102001,"Carrer de Cristòfor Colom, 74",2.45187,41.53899,Forn de pa / Fleca,15/12/2023
 0812102001,"Carrer de Cristòfor Colom, 99",2.452769,41.539583,Supermercat / cooperatives de consum,01/12/2025
+0812102001,"Carrer de Sant Pere, 6",2.449378,41.538758,Estètica / bellesa / benestar,11/06/2024
+0812102001,"Carrer de la Confraria de Sant Elm, 4",2.45282,41.539011,Professionals construcció,02/07/2024
 0812102002,"Camí Ral, 11",2.455766,41.541346,Assegurances,04/11/2025
 0812102002,"Carrer de Cristòfor Colom, 116",2.453889,41.540015,Concessionari,12/01/2026
+0812102002,"Passeig del Callao, 3",2.454064,41.538838,Bar / cafeteria / granja / Forn de pa - degustació,26/02/2024
 0812102003,"Camí Ral, 20",2.455498,41.541382,Supermercat / cooperatives de consum,01/06/2025
 0812102003,"Carrer de José Francisco Pacheco, 80",2.45246,41.543942,Clínica veterinària i perruqueria canina,09/10/2025
 0812102004,"Avinguda d'Amèrica, 166",2.453477,41.546587,Restaurant / Bar restaurant,19/06/2026
 0812102004,"Carrer de las Siete Partidas, 27",2.451285,41.546165,Carnisseria / Xarcuteria / Polleria / aus / conills,01/06/2025
+0812102004,"Carrer de las Siete Partidas, 29",2.451378,41.54616,"Llar, decoració i mobiliari",19/12/2023
 0812102004,"Carrer de las Siete Partidas, 50",2.452248,41.545983,Bar / cafeteria / granja / Forn de pa - degustació,01/06/2025
+0812102004,"Carrer de las Siete Partidas, 81",2.453934,41.545935,Perruqueria / barberia,30/11/2023
 0812102004,"Ronda d'Alfons X el Savi, 153",2.450938,41.545725,Fruita i verdura,21/10/2025
 0812102004,"Ronda d'Alfons X el Savi, 185",2.452215,41.545659,Professionals construcció,10/09/2025
+0812102004,"Ronda d'Alfons X el Savi, 195",2.453705,41.54558,"Joieria, rellotgeria i bijuteria",21/11/2023
 0812102005,"Avinguda d'Amèrica, 101",2.452943,41.547002,Gestoria i assessoria,01/06/2025
+0812102005,"Camí del Celler, 14",2.472365,41.548337,Restaurant / Bar restaurant,26/09/2023
 0812102005,"Carretera de Mata, 64",2.452373,41.548238,Roba i complements,21/10/2025
 0812102005,"Carretera de Mata, 66",2.45244,41.548295,Combustibles i carburants,01/06/2025
 0812102005,"Carretera de Mata, 68",2.452507,41.548353,Taller mecànic,01/06/2025
 0812102005,"Ronda de Miguel de Cervantes, 79",2.453618,41.546997,Restaurant / Bar restaurant,01/06/2025
+0812102007,"Carrer d'Enric Prat de la Riba, 71",2.450504,41.544076,Restaurant / Bar restaurant,19/09/2023
 0812102007,"Carrer de Floridablanca, 131",2.450703,41.544468,"Arranjament de roba, sabates, claus i tapisseria",02/12/2025
+0812102007,"Carrer de Mata, 6",2.447392,41.544407,Restaurant / Bar restaurant,04/09/2023
 0812102007,"Carrer de Rocafonda, 10",2.4473,41.544902,Altres professionals,13/01/2026
 0812102007,"Ronda d'Alfons X el Savi, 174",2.451845,41.545499,Autoescola,11/02/2026
+0812102007,"Ronda d'Alfons X el Savi, 184",2.452832,41.545445,Perruqueria / barberia,11/10/2023
 0812102008,"Carrer de Les Monges, 40",2.445461,41.543681,Bar / cafeteria / granja / Forn de pa - degustació,13/01/2026
+0812102008,"Carrer de la Ciutat de los Álamos, 37",2.445655,41.545315,Serveis de salut,22/11/2023
 0812102008,"Carrer de la Ciutat de los Álamos, 7",2.446702,41.544646,Instal·lacions i submnistraments,26/09/2025
 0812102008,"Plaça d'Espanya, 3",2.44289,41.544777,Informàtica / mòbils i complements,31/01/2025
 0812102009,"Carrer d'Enric Prat de la Riba, 10",2.44798,41.543323,Forn de pa / Fleca,01/01/2025
 0812102009,"Carrer d'Enric Prat de la Riba, 14",2.448095,41.54335,Immobiliària,15/10/2025
+0812102009,"Carrer de L'Arquebisbe Jaume Creus, 10",2.448776,41.542488,Rostisseria i Menjar preparat,21/05/2024
+0812102009,"Carrer de Pascual Madoz, 1",2.448615,41.542273,Perruqueria / barberia,23/05/2024
 0812102009,"Carrer de Sant Francesc d'Assís, 1",2.446142,41.541726,"Llar, decoració i mobiliari",30/09/2026
 0812102009,"Carrer de Sant Ramon, 49",2.449977,41.541379,"Artesania, art i col·lecció",30/09/2026
+0812102009,"Carrer de Sant Simó, 3",2.447074,41.54053,Restaurant / Bar restaurant,26/01/2024
+0812102009,"Plaça del Forn del Vidre, 2",2.448134,41.542605,Comestibles i begudes (Queviures),09/05/2023
+0812102010,"Camí Ral, 160",2.451346,41.5401,Comestibles i begudes (Queviures),01/12/2024
 0812102010,"Carrer de Na Pau, 14",2.44743,41.539837,Bar de copes / discoteca,15/10/2025
+0812102010,"Carrer de Sant Cristòfor, 1",2.446907,41.539654,Farmàcies i parafarmàcies,01/04/2023
 0812102010,"Carrer de Sant Cristòfor, 15",2.447063,41.539256,Restaurant / Bar restaurant,26/06/2026
 0812102010,"Carrer de Sant Cristòfor, 23",2.447194,41.539043,Roba i complements,12/05/2025
 0812102010,"Carrer de l'Hospital, 1",2.448654,41.540747,Perruqueria / barberia,19/05/2025
@@ -109,22 +167,42 @@ cusec,direccion,lon,lat,antes,fecha_cierre
 0812102011,"Camí Ral, 98",2.453131,41.54089,Supermercat / cooperatives de consum,24/02/2025
 0812102011,"Carrer d'Enric Prat de la Riba, 60",2.449716,41.543744,Restaurant / Bar restaurant,14/07/2026
 0812102011,"Carrer de Floridablanca, 39",2.452412,41.540875,Autoescola,02/12/2025
+0812102011,"Carrer de Francisco de Rojas, 14",2.450912,41.542354,Supermercat / cooperatives de consum,02/07/2024
+0812102012,"Carrer de la Ciutat de los Álamos, 12",2.446266,41.545044,Instal·lacions i submnistraments,19/06/2024
 0812102012,"Ronda d'Alfons X el Savi, 62",2.446215,41.545648,Serveis de salut,25/09/2025
+0812102012,"Ronda d'Alfons X el Savi, 64",2.446347,41.545662,Gestoria i assessoria,05/10/2023
+0812102012,"Ronda d'Alfons X el Savi, 84",2.446933,41.545721,Forn de pa / Fleca,05/10/2023
 0812103001,"Avinguda d'Amèrica, 37",2.448468,41.547563,Banca i serveis financers,05/05/2025
 0812103001,"Avinguda d'Amèrica, 92",2.449451,41.547187,Reparacions,27/05/2025
 0812103001,"Carrer de Colòmbia, 48",2.449727,41.548058,Tintoreria i bugaderia,02/06/2025
+0812103001,"Carrer de Pablo Ruiz Picasso, 16",2.449077,41.54871,Rostisseria i Menjar preparat,01/01/2023
 0812103001,"Carrer de Pablo Ruiz Picasso, 24",2.449412,41.548821,Roba i complements,02/06/2025
 0812103001,"Carrer de Pablo Ruiz Picasso, 26",2.449441,41.548831,Roba i complements,02/06/2025
+0812103001,"Carrer de Pablo Ruiz Picasso, 32",2.449665,41.548905,Associacions,04/04/2024
+0812103001,"Carrer de la República Argentina, 50",2.448871,41.54785,Restaurant / Bar restaurant,27/09/2023
+0812103001,"Carrer de la República Argentina, 74",2.44991,41.547744,Roba i complements,25/04/2024
 0812103001,"Ronda d'Alfons X el Savi, 107",2.448272,41.545873,Fruita i verdura,30/10/2025
+0812103002,"Carrer de Colòmbia, 57",2.45078,41.548044,Roba i complements,25/04/2024
 0812103002,"Carrer de Josep Punsola, 1",2.45087,41.547393,Perruqueria / barberia,05/05/2025
 0812103002,"Carrer de Josep Punsola, 18",2.451039,41.548091,Altres,05/05/2025
 0812103002,"Carrer de Josep Punsola, 5",2.450884,41.547567,Roba i complements,05/05/2025
+0812103002,"Carrer de Santiago Rusiñol, 34",2.451343,41.548638,Comestibles i begudes (Queviures),10/05/2024
 0812103002,"Carretera de Mata, 63",2.451778,41.548071,Roba i complements,04/09/2025
+0812103002,"Plaça de Colòmbia, 2",2.450137,41.548279,Comestibles i begudes (Queviures),17/05/2024
+0812103003,"Carrer de Josep Punsola, 55",2.450816,41.549168,Restaurant / Bar restaurant,03/05/2024
+0812103003,"Carrer de Pablo Ruiz Picasso, 66",2.451276,41.549446,Perruqueria / barberia,20/09/2023
+0812103003,"Carrer de Santiago Rusiñol, 31",2.451337,41.548729,"Arranjament de roba, sabates, claus i tapisseria",10/11/2023
+0812103003,"Carrer de Santiago Rusiñol, 47",2.451838,41.548811,"Arranjament de roba, sabates, claus i tapisseria",17/05/2024
+0812103003,"Carretera de Mata, 87",2.452534,41.548725,Restaurant / Bar restaurant,25/04/2024
+0812103003,"Ronda de Rafael Estrany, 9",2.451981,41.549428,Perruqueria / barberia,17/01/2024
+0812103004,"Carrer de Blai Parera, 21",2.449703,41.550669,Celler (vins i licors),02/05/2024
 0812103004,"Carrer de Blai Parera, 6",2.449356,41.550425,Seveis públics,29/05/2025
 0812103004,"Carrer de Frank Marshall, 38",2.449708,41.551054,Bar / cafeteria / granja / Forn de pa - degustació,05/05/2025
 0812103004,"Carrer de Joan Miró, 38",2.450974,41.549954,Restaurant / Bar restaurant,05/05/2025
+0812103004,"Carrer de Mèxic, 52",2.449636,41.549382,Roba i complements,04/04/2024
 0812103004,"Carrer de Mèxic, 62",2.449321,41.550105,Restaurant / Bar restaurant,02/06/2025
 0812103004,"Carrer de Pablo Ruiz Picasso, 39",2.450022,41.549181,Agència de viatges,02/06/2025
+0812103004,"Carrer de Pablo Ruiz Picasso, 79",2.451594,41.54972,"Llar, decoració i mobiliari",28/02/2024
 0812103004,"Carrer dels Músics Cassadó, 15",2.449462,41.550022,Autoescola,04/09/2025
 0812103004,"Ronda de Rafael Estrany, 43",2.450216,41.550915,Gestoria i assessoria,01/01/2025
 0812103005,"Avinguda del Perú, 56",2.448203,41.550102,Roba i complements,01/01/2025
@@ -132,108 +210,257 @@ cusec,direccion,lon,lat,antes,fecha_cierre
 0812103005,"Carrer de Mèxic, 65",2.449331,41.549788,"Llar, decoració i mobiliari",02/06/2025
 0812103005,"Carrer de Mèxic, 79",2.449114,41.55029,Bar / cafeteria / granja / Forn de pa - degustació,02/06/2025
 0812103005,"Carrer de Mèxic, 91",2.448989,41.550582,Pastisseria i bomboneria,02/06/2025
+0812103005,"Carrer de Mèxic, 95",2.448932,41.550713,Bar / cafeteria / granja / Forn de pa - degustació,04/09/2023
 0812103005,"Carrer de Pablo Ruiz Picasso, 17",2.449056,41.548861,Calçat i pell,02/06/2025
 0812103005,"Carrer de Pablo Ruiz Picasso, 23",2.449335,41.548954,Basar,02/06/2025
+0812103005,"Carrer de la Mare Alfonsa Cavín, 7",2.448606,41.549214,Forn de pa / Fleca,03/05/2024
 0812103005,"Carrer dels Músics Cassadó, 18",2.449184,41.549846,"Llar, decoració i mobiliari",05/05/2025
 0812103006,"Carrer de l'Energia, 9",2.453301,41.551088,Taller mecànic,15/06/2026
 0812103007,"Carrer de la Creu Roja, 10",2.441478,41.548751,Carnisseria / Xarcuteria / Polleria / aus / conills,23/06/2026
+0812103007,"Carrer de la Creu Roja, 28",2.44236,41.548882,Carnisseria / Xarcuteria / Polleria / aus / conills,25/10/2023
+0812103007,"Plaça dels Drets Humans, 1",2.441738,41.547755,Forn de pa / Fleca,20/11/2023
 0812103007,"Riera de Cirera, 2",2.44175,41.54798,Instal·lacions i submnistraments,16/06/2026
 0812103008,"Carrer de la Creu Roja, 13",2.441744,41.548898,Serveis de salut,23/06/2026
+0812103008,"Carrer dels Tres Tombs, 14",2.441571,41.54903,Perruqueria / barberia,26/10/2023
+0812103008,"Carrer dels Tres Tombs, 20",2.441508,41.549431,Supermercat / cooperatives de consum,26/10/2023
+0812103008,"Riera de Figuera Major, 16",2.44094,41.549723,Altres professionals,23/10/2023
+0812103008,"Riera de Figuera Major, 20",2.440927,41.549858,Taller mecànic,23/10/2023
 0812103009,"Avinguda del Perú, 59",2.44797,41.550221,Roba i complements,01/01/2025
+0812103009,"Carrer d'Esteve Cortils, 2",2.442903,41.54759,Restaurant / Bar restaurant,20/09/2023
+0812103009,"Carrer de la Mare de Déu de l'Esperança, 18",2.442515,41.548512,Estètica / bellesa / benestar,24/10/2023
+0812103009,"Carrer de la Mare de Déu de l'Esperança, 2",2.44209,41.54804,Carnisseria / Xarcuteria / Polleria / aus / conills,24/10/2023
+0812103009,"Ronda de Sant Oleguer, 100",2.446976,41.5513,Gestoria i assessoria,27/10/2023
 0812103009,"Ronda de Sant Oleguer, 110",2.44741,41.551574,Taller mecànic,30/06/2026
 0812103010,"Avinguda d'Amèrica, 4",2.444927,41.547481,Forn de pa / Fleca,13/10/2026
 0812103010,"Ronda d'Alfons X el Savi, 15",2.443225,41.545155,Comestibles i begudes (Queviures),25/09/2025
 0812103011,"Avinguda d'Amèrica, 25",2.446933,41.547646,Estètica / bellesa / benestar,09/10/2025
 0812103011,"Avinguda d'Amèrica, 48",2.447008,41.547404,Celler (vins i licors),27/05/2025
 0812103011,"Avinguda del Perú, 11",2.44783,41.548097,Peix i marisc,30/10/2025
+0812103011,"Carrer de Colòmbia, 1",2.447627,41.548321,Locutori,25/04/2024
+0812103012,"Carrer de la Font dels Reis, 17",2.430542,41.559485,Restaurant / Bar restaurant,10/11/2023
+0812103012,"Carrer del Montnegre, 54",2.437627,41.571725,Restaurant / Bar restaurant,16/11/2023
+0812103013,"Carrer de Joan Fuster, 12",2.439186,41.551645,Recanvis / neumàtics,17/11/2023
 0812103013,"Carrer de Mercè Rodoreda, 1",2.440619,41.55473,Carnisseria / Xarcuteria / Polleria / aus / conills,14/05/2026
+0812103013,"Riera de Figuera Major, 61",2.441989,41.55412,Serveis de salut,30/10/2023
 0812103013,"Ronda de Frederic Mistral, 14",2.439114,41.55073,Restaurant / Bar restaurant,11/05/2026
 0812103013,"Ronda dels Països Catalans, 27",2.438907,41.55387,Roba i complements,18/05/2026
+0812103013,"Ronda dels Països Catalans, 31",2.439243,41.553977,Serveis de lleure,22/01/2024
+0812103013,"Ronda dels Països Catalans, 36",2.439072,41.553718,Banca i serveis financers,17/11/2023
 0812103013,"Ronda dels Països Catalans, 54",2.440228,41.554087,Altres,20/05/2026
+0812103013,"Ronda dels Països Catalans, 60",2.440494,41.554172,Geladeria / Xurreria,09/11/2023
+0812103014,"Carrer Torrent de les Piques, 10",2.439626,41.552326,Carnisseria / Xarcuteria / Polleria / aus / conills,13/11/2023
 0812103014,"Carrer Torrent de les Piques, 4",2.44008,41.552059,Take Away / Delivery,05/05/2026
+0812103014,"Carrer Torrent de les Piques, 6",2.439799,41.552216,Supermercat / cooperatives de consum,13/11/2023
+0812103014,"Riera de Figuera Major, 15",2.44042,41.552268,"Drogueria, perfumeria i cosmètica",10/07/2024
+0812103014,"Ronda de Sant Oleguer, 23",2.442146,41.551559,Altres professionals,27/10/2023
+0812103014,"Ronda de Sant Oleguer, 7",2.441647,41.551964,Instal·lacions i submnistraments,27/10/2023
 0812104001,"Avinguda de Torner, 56",2.440228,41.547934,Estètica / bellesa / benestar,29/06/2026
 0812104001,"Carrer de l'Abat Francesc Dorda, 18",2.440826,41.546847,"Mascotes, accessoris animals domèstics",29/06/2026
 0812104002,"Carrer de Càceres, 11",2.43358,41.55027,Restaurant / Bar restaurant,10/06/2026
+0812104002,"Carrer de la Muntanya, 71",2.433565,41.550038,Forn de pa / Fleca,18/12/2023
+0812104002,"Carrer de la Muntanya, 97",2.432488,41.550533,Roba i complements,20/12/2023
+0812104002,"Carretera de Cirera, 75",2.434175,41.550335,"Mascotes, accessoris animals domèstics",26/09/2023
 0812104003,"Ronda de Jaume Ferran, 60",2.435152,41.547432,Pastisseria i bomboneria,04/06/2026
+0812104003,"Ronda de Jaume Ferran, 74",2.434781,41.547034,"Llar, decoració i mobiliari",11/12/2023
+0812104004,"Carrer d'Irlanda, 20",2.43008,41.546482,Comestibles i begudes (Queviures),24/01/2024
+0812104004,"Carrer de Càceres, 35",2.432767,41.549402,"Arranjament de roba, sabates, claus i tapisseria",20/12/2023
+0812104004,"Carrer dels Països Baixos, 18",2.430335,41.547197,Perruqueria / barberia,21/12/2023
+0812104004,"Via d'Europa, 151",2.431491,41.547118,Associacions,27/11/2023
 0812104004,"Via d'Europa, 169",2.431407,41.547999,"Mascotes, accessoris animals domèstics",22/05/2026
+0812104005,"Carrer d'Alemanya, 31",2.430771,41.544847,"Drogueria, perfumeria i cosmètica",20/12/2023
+0812104005,"Carrer d'Alemanya, 36",2.430254,41.545517,Perruqueria / barberia,20/12/2023
+0812104005,"Carrer d'Alemanya, 42",2.430336,41.545024,Farmàcies i parafarmàcies,20/12/2023
+0812104005,"Carrer de Dinamarca, 54",2.430051,41.544822,Oficines de correus / servei missatgeria i transport,15/01/2024
+0812104005,"Via d'Europa, 133",2.431078,41.545533,Supermercat / cooperatives de consum,15/01/2024
 0812104006,"Carrer de Julià Gual, 8",2.434454,41.543103,Perruqueria / barberia,06/10/2025
+0812104006,"Carrer de Julià Gual, 9",2.433999,41.543194,Serveis de salut,28/07/2023
+0812104006,"Via d'Europa, 28",2.435193,41.541419,Serveis de salut,22/11/2023
+0812104007,"Carrer de Calella, 8",2.429132,41.547954,Articles esportius,15/01/2024
+0812104007,"Carrer de Sant Pol, 5",2.428462,41.547749,Forn de pa / Fleca,15/01/2024
 0812104009,"Avinguda del Corregiment de Mataró, 72",2.436805,41.547349,Carnisseria / Xarcuteria / Polleria / aus / conills,01/06/2026
+0812104009,"Avinguda del Corregiment de Mataró, 74",2.436698,41.547438,"Llar, decoració i mobiliari",11/12/2023
+0812104009,"Avinguda del Corregiment de Mataró, 87",2.436125,41.547706,Supermercat / cooperatives de consum,11/12/2023
+0812104009,"Carrer d'Esteve Albert, 63",2.436173,41.545414,Forn de pa / Fleca,19/09/2023
 0812104009,"Carrer de la Mare de Déu del Pilar, 6",2.435803,41.548092,Electrodomèstics,18/11/2033
+0812104009,"Carrer del Torrent de la Pólvora, 128",2.434735,41.548421,Roba i complements,18/12/2023
+0812104009,"Carretera de Cirera, 7",2.437298,41.54895,Serveis de salut,15/12/2023
+0812104009,"Ronda de Jaume Ferran, 24",2.436885,41.548465,Locutori,14/12/2023
 0812104009,"Ronda de Jaume Ferran, 31",2.436568,41.548146,"Drogueria, perfumeria i cosmètica",04/06/2026
+0812104009,"Ronda de Jaume Ferran, 36",2.43646,41.548252,Taller mecànic,14/12/2023
+0812104009,"Ronda de Jaume Ferran, 50",2.435866,41.547895,Banca i serveis financers,14/12/2023
 0812104009,"Ronda de Mossèn Jacint Verdaguer, 69",2.437138,41.544871,Activitats industrials,06/10/2025
 0812105001,"Avinguda de Josep Puig i Cadafalch, 12",2.434567,41.540544,"Llar, decoració i mobiliari",02/07/2025
 0812105001,"Carrer de Joan Maragall, 15",2.428585,41.540648,Gestoria i assessoria,20/04/2026
 0812105001,"Carrer de Joan Maragall, 31",2.428674,41.540971,Bar / cafeteria / granja / Forn de pa - degustació,20/04/2026
+0812105001,"Carrer de Joan Maragall, 43",2.428757,41.541272,Restaurant / Bar restaurant,12/03/2024
+0812105001,"Via d'Europa, 101",2.432111,41.544192,Instal·lacions i submnistraments,23/11/2023
 0812105001,"Via d'Europa, 60",2.433823,41.542713,Serveis de salut,23/09/2025
+0812105003,"Carrer de Bellavista, 10",2.425048,41.544654,Professionals construcció,18/03/2024
+0812105003,"Carrer de Bellavista, 7",2.42505,41.544561,Recanvis / neumàtics,18/03/2024
 0812105003,"Carrer del Berguedà, 23",2.425568,41.544681,Peix i marisc,01/04/2026
 0812105003,"Ronda de la Roca Blanca, 69",2.426096,41.544705,Perruqueria / barberia,17/07/2025
+0812105003,"Ronda de la Roca Blanca, 87",2.4254,41.544852,"Llar, decoració i mobiliari",14/03/2024
 0812105003,"Ronda de la Roca Blanca, 89",2.425315,41.544857,Carnisseria / Xarcuteria / Polleria / aus / conills,23/09/2025
+0812105005,"Ronda de la Cerdanya, 30",2.422745,41.54204,Restaurant / Bar restaurant,05/03/2024
+0812105005,"Ronda de la Cerdanya, 54",2.422423,41.542739,,05/03/2024
 0812105005,"Ronda de la Cerdanya, 60",2.422506,41.543014,Copistèria i Arts Gràfiques,22/07/2025
+0812105006,"Avinguda de Josep Puig i Cadafalch, 278",2.42163,41.541019,Gestoria i assessoria,30/01/2023
 0812105006,"Carrer de Burriac, 63",2.421842,41.541387,Perruqueria / barberia,22/07/2025
+0812105006,"Carrer de Burriac, 66",2.421645,41.541526,Comestibles i begudes (Queviures),18/07/2023
+0812105007,"Carrer de València, 73",2.422844,41.539398,Mamteniment i neteja,06/02/2024
+0812105007,"Carrer de València, 83",2.423013,41.539792,Comestibles i begudes (Queviures),18/09/2023
+0812105007,"Carrer del Germà Doroteo, 8",2.421986,41.540418,Restaurant / Bar restaurant,04/03/2024
 0812105007,"Passatge de la Torre Palauet, 3",2.421545,41.540568,Restaurant / Bar restaurant,14/10/2025
+0812105008,"Carrer de Roger de Llúria, 60",2.421645,41.537778,Perruqueria / barberia,03/04/2024
 0812105008,"Ronda de Josep Tarradellas, 60",2.421154,41.537576,Merceria i llenceria,17/07/2025
 0812105008,"Ronda de Josep Tarradellas, 62",2.421128,41.537704,Restaurant / Bar restaurant,17/07/2025
+0812105008,"Ronda de Josep Tarradellas, 68",2.421107,41.538153,Oficines de correus / servei missatgeria i transport,04/03/2024
 0812105009,"Passeig de Ramon Berenguer III, 19",2.422689,41.536227,Restaurant / Bar restaurant,27/04/2026
 0812105009,"Passeig de Ramon Berenguer III, 3",2.422153,41.536006,Restaurant / Bar restaurant,06/05/2026
 0812105009,"Ronda de Josep Tarradellas, 18",2.421615,41.536439,Recanvis / neumàtics,17/07/2025
+0812105009,"Ronda de Josep Tarradellas, 24",2.421534,41.536563,Taller mecànic,04/03/2024
+0812105009,"Ronda de Josep Tarradellas, 36",2.421377,41.53688,Recanvis / neumàtics,04/03/2024
+0812105009,"Ronda de Josep Tarradellas, 44",2.421328,41.537001,Carnisseria / Xarcuteria / Polleria / aus / conills,04/03/2024
 0812105009,"Ronda de Josep Tarradellas, 52",2.421268,41.537172,Mamteniment i neteja,17/07/2025
 0812105010,"Carrer de Jaume I El Conqueridor, 27",2.425207,41.538116,Perruqueria / barberia,18/09/2025
 0812105010,"Carrer de Jaume I El Conqueridor, 6",2.425974,41.538629,Restaurant / Bar restaurant,09/07/2025
 0812105010,"Carrer de Jaume I El Conqueridor, 7",2.42608,41.538574,"Arranjament de roba, sabates, claus i tapisseria",28/04/2026
 0812105010,"Carrer de Vitòria, 17",2.42553,41.539062,Altres professionals,18/09/2025
+0812105010,"Carrer del Rosselló, 36",2.425048,41.538755,Roba i complements,19/02/2024
+0812105010,"Carrer del Rosselló, 42",2.425145,41.538616,Articles de segona mà,09/02/2024
 0812105010,"Carrer del Rosselló, 52",2.425309,41.538383,Fruita i verdura,16/10/2025
 0812105010,"Carrer del Rosselló, 57",2.425375,41.538443,Immobiliària,08/04/2026
 0812105010,"Carrer del Rosselló, 67",2.425657,41.538111,Electrodomèstics,15/07/2025
+0812105010,"Passeig de Ramon Berenguer III, 117",2.426155,41.538156,Locutori,01/02/2024
 0812105010,"Passeig de Ramon Berenguer III, 87",2.42519,41.537243,Supermercat / cooperatives de consum,27/04/2026
+0812105011,"Carrer de la Mare de Déu de La Cisa , 38",2.426843,41.537166,Locutori,07/02/2024
 0812105011,"Carrer de la Mare de Déu del Corredor, 39",2.426431,41.537443,Gestoria i assessoria,01/07/2025
 0812105011,"Carrer del Rosselló, 91",2.426464,41.537275,Restaurant / Bar restaurant,15/07/2025
+0812105011,"Passeig de Ramon Berenguer III, 92",2.426037,41.537768,Fruita i verdura,01/02/2024
 0812105012,"Carrer d'Atenes, 7",2.423811,41.535542,Rostisseria i Menjar preparat,09/07/2025
 0812105012,"Carrer de l'Estadi, 32",2.425796,41.536135,Recanvis / neumàtics,21/04/2026
+0812105012,"Carrer de la Marató, 80",2.425174,41.535771,Serveis de lleure,07/02/2024
+0812105012,"Carrer de la Mare de Déu de La Cisa , 119",2.423157,41.535085,"Llar, decoració i mobiliari",22/02/2024
+0812105012,"Carrer del Rosselló, 102",2.426866,41.536746,Gimnàs i esport,12/02/2024
+0812105012,"Ronda del Cros, 22",2.423435,41.53492,Concessionari,07/03/2024
+0812105013,"Carrer de l'Estadi, 26",2.425983,41.535851,Assegurances,05/02/2024
+0812105013,"Carrer de l'Estadi, 28",2.425969,41.535873,Clínica veterinària i perruqueria canina,22/02/2024
+0812105013,"Carrer de la Marató, 1",2.428261,41.537289,Roba i complements,06/02/2024
 0812105013,"Carrer de la Marató, 41",2.426726,41.53626,Serveis de salut,23/04/2026
 0812105013,"Carrer de la Marató, 8",2.427462,41.536808,Estètica / bellesa / benestar,23/04/2026
+0812105013,"Carrer del Rosselló, 111",2.427116,41.536641,Roba i complements,02/11/2024
 0812105015,"Carrer Major, 55",2.427149,41.542293,Supermercat / cooperatives de consum,22/07/2025
 0812105015,"Carrer Major, 57",2.427225,41.542386,Supermercat / cooperatives de consum,22/07/2025
 0812105015,"Carrer de Salvador Llanas, 12",2.426158,41.542377,Carnisseria / Xarcuteria / Polleria / aus / conills,01/04/2026
+0812105015,"Carrer de la Gatassa, 14",2.42542,41.540836,Merceria i llenceria,02/04/2024
 0812105015,"Carrer de la Mare de Déu de Núria, 13",2.426883,41.542919,Professionals construcció,31/03/2026
 0812105016,"Avinguda de Josep Puig i Cadafalch, 220",2.424697,41.540444,Pastisseria i bomboneria,14/10/2025
+0812105016,"Carrer de Burriac, 34",2.423329,41.541251,Restaurant / Bar restaurant,07/03/2024
+0812105016,"Carrer de Maria Auxiliadora, 28",2.42422,41.541277,Quotidià alimentari,02/04/2024
+0812105016,"Carrer de Maria Auxiliadora, 54",2.424621,41.541789,Carnisseria / Xarcuteria / Polleria / aus / conills,03/04/2024
+0812105016,"Carrer de la Gatassa, 21",2.425411,41.541497,Locutori,22/03/2024
+0812105016,"Carrer de la Gatassa, 27",2.425434,41.541635,"Joieria, rellotgeria i bijuteria",22/03/2024
+0812105016,"Carrer de la Gatassa, 9",2.425348,41.541121,Bar / cafeteria / granja / Forn de pa - degustació,02/04/2024
+0812105016,"Ronda de la Cerdanya, 12",2.422846,41.54141,Comestibles i begudes (Queviures),05/03/2024
 0812105017,"Carrer de Sant Joan Bosco, 53",2.423573,41.53875,Carnisseria / Xarcuteria / Polleria / aus / conills,08/10/2025
+0812105017,"Carrer de València, 68",2.423269,41.539061,Perruqueria / barberia,06/02/2024
+0812105017,"Carrer de València, 72",2.423125,41.539215,"Llar, decoració i mobiliari",06/02/2024
+0812105017,"Carrer de València, 76",2.423059,41.53946,Taller mecànic,06/02/2024
+0812105017,"Carrer de València, 80",2.423124,41.539611,Professionals construcció,05/02/2024
+0812105019,"Carrer de Nàpols, 29",2.424995,41.539825,Perruqueria / barberia,04/03/2024
+0812105019,"Carrer de Nàpols, 4",2.42546,41.539256,Roba i complements,27/02/2024
 0812105019,"Carrer de Vitòria, 12",2.425356,41.539082,Roba i complements,14/10/2025
+0812105019,"Carrer del Rosselló, 23",2.424765,41.53932,"Joieria, rellotgeria i bijuteria",19/09/2023
 0812105019,"Carrer del Rosselló, 39",2.424981,41.539008,Roba i complements,30/07/2025
+0812105019,"Carrer del Rosselló, 6",2.424475,41.539817,Forn de pa / Fleca,21/09/2023
+0812105019,"Carrer del Rosselló, 9",2.424612,41.539694,Merceria i llenceria,01/10/2024
 0812105020,"Avinguda de Josep Puig i Cadafalch, 180",2.426516,41.540344,Roba i complements,14/10/2025
 0812105020,"Avinguda de Josep Puig i Cadafalch, 194",2.425771,41.540381,Banca i serveis financers,02/07/2025
+0812105020,"Carrer Major, 9",2.426882,41.540634,Supermercat / cooperatives de consum,20/09/2023
+0812105021,"Carrer del Berguedà, 81B",2.426522,41.547034,Supermercat / cooperatives de consum,18/09/2023
+0812105021,"Ronda de la Roca Blanca, 106",2.424577,41.545088,Activitats industrials,15/03/2024
+0812105021,"Ronda de la Roca Blanca, 110",2.424436,41.545055,Centre educatiu,15/03/2024
+0812105021,"Ronda de la Roca Blanca, 68",2.426564,41.544824,Altres professionals,15/03/2024
+0812105021,"Ronda de la Roca Blanca, 74",2.426292,41.544933,Fruita i verdura,15/03/2024
+0812106001,"Avinguda de Jaume Recoder, 45",2.44322,41.534324,Escoles i acadèmies,07/05/2024
+0812106001,"Avinguda de Jaume Recoder, 63",2.443698,41.53382,Fruita i verdura,30/03/2023
 0812106001,"Avinguda de Jaume Recoder, 92",2.444239,41.532934,Estancs i articles per a fumadors,18/06/2025
 0812106001,"Avinguda del Maresme, 121",2.441724,41.531483,Roba i complements,03/11/2025
 0812106001,"Avinguda del Maresme, 145",2.44341,41.53237,Professionals construcció,10/03/2025
+0812106001,"Carrer de Cosme Churruca, 26",2.443286,41.535012,Estètica / bellesa / benestar,16/03/2023
+0812106001,"Carrer de Cosme Churruca, 42",2.443616,41.53475,Estètica / bellesa / benestar,16/03/2023
 0812106002,"Avinguda de Jaume Recoder, 28",2.442714,41.534552,Fruita i verdura,01/06/2025
+0812106002,"Avinguda de Jaume Recoder, 52",2.443241,41.533994,Forn de pa / Fleca,04/04/2023
 0812106002,"Camí Ral, 535",2.440977,41.534521,Materials de construcció i articles de sanejament,11/07/2025
 0812106002,"Carrer de Josep Abril, 15",2.44015,41.533002,"Llar, decoració i mobiliari",03/12/2025
 0812106002,"Carrer de la Cooperativa, 48",2.442481,41.533729,Serveis personals,03/12/2025
 0812106003,"Camí Ral, 478",2.44214,41.535631,Assegurances,12/11/2025
 0812106003,"Camí Ral, 492",2.441839,41.535384,Restaurant / Bar restaurant,12/11/2025
+0812106003,"Camí Ral, 500",2.441656,41.535256,Basar,24/07/2023
 0812106003,"Camí Ral, 508",2.44145,41.535112,"Papereria, llibreria",11/07/2025
 0812106003,"Camí Ral, 566",2.439768,41.533787,"Llar, decoració i mobiliari",12/11/2025
 0812106003,"Camí Ral, 574",2.439586,41.533634,"Llar, decoració i mobiliari",12/11/2025
 0812106003,"Carrer d'Iluro, 61",2.440236,41.536321,Perruqueria / barberia,13/02/2025
+0812106003,"Carrer d'Iluro, 75",2.440673,41.535862,Fruita i verdura,09/05/2023
+0812106003,"Carrer d'Iluro, 89",2.441092,41.535419,Instal·lacions i submnistraments,05/06/2024
+0812106003,"Carrer de Cuba, 100",2.441939,41.536096,Supermercat / cooperatives de consum,01/04/2023
+0812106003,"Carrer de Cuba, 58",2.440891,41.536931,Roba i complements,20/04/2023
 0812106003,"Carrer de Javier Castaños, 90",2.437983,41.534092,"Llar, decoració i mobiliari",16/10/2025
 0812106003,"Carrer de Sant Cugat, 23",2.439808,41.536133,Altres professionals,05/05/2025
+0812106003,"Carrer de Sant Cugat, 37",2.439502,41.535895,Taller mecànic,15/11/2023
+0812106003,"Ronda de Francesc Macià, 22",2.43777,41.533407,Roba i complements,03/11/2023
 0812106003,"Ronda de la República, 40",2.439166,41.535314,Restaurant / Bar restaurant,16/03/2026
 0812106004,"Carrer de Cuba, 36",2.440243,41.537446,Imatge i so,14/05/2025
 0812106004,"Carrer de Cuba, 50",2.440638,41.537131,Restaurant / Bar restaurant,09/07/2026
+0812106004,"Carrer de La Unió, 10",2.43989,41.537096,Perruqueria / barberia,12/07/2023
 0812106004,"Carrer de La Unió, 14",2.439761,41.537003,Gestoria i assessoria,29/09/2025
+0812106004,"Carrer de La Unió, 53",2.438831,41.536232,Perruqueria / barberia,01/06/2024
+0812106004,"Carrer de Miquel Biada, 107",2.434812,41.537305,Roba i complements,26/04/2024
+0812106004,"Carrer de Miquel Biada, 81",2.435709,41.537471,Òptica / Audífons / Ortopèdia,25/07/2024
 0812106004,"Carrer de Miquel Biada, 89",2.435307,41.537397,Perruqueria / barberia,22/09/2025
 0812106004,"Carrer de Miquel Biada, 97",2.435171,41.537371,Roba i complements,22/09/2025
+0812106004,"Carrer de Pompeu Fabra, 20",2.434546,41.538048,Forn de pa / Fleca,19/04/2024
 0812106004,"Carrer de Sant Cugat, 14",2.44032,41.536638,Merceria i llenceria,05/05/2025
+0812106004,"Carrer de Sant Cugat, 32",2.439709,41.536184,Comestibles i begudes (Queviures),15/11/2023
 0812106004,"Carrer de Sant Cugat, 56",2.439146,41.535748,Gestoria i assessoria,01/01/2025
+0812106004,"Ronda de la República, 50",2.438853,41.535565,Restaurant / Bar restaurant,13/06/2024
 0812106004,"Ronda de la República, 88",2.437907,41.536324,Take Away / Delivery,16/03/2026
+0812106005,"Avinguda de la Gatassa, 4",2.430693,41.536884,Roba i complements,15/04/2024
 0812106005,"Carrer de Domènec Matheu, 51",2.43147,41.537531,Restaurant / Bar restaurant,20/07/2026
+0812106005,"Carrer de Jeroni Pujades, 3",2.432959,41.538898,Informàtica / mòbils i complements,18/04/2024
+0812106005,"Carrer de Joaquim Capell i Vidal, 17",2.433072,41.539482,Fruita i verdura,18/04/2024
 0812106005,"Carrer de Joaquim Capell i Vidal, 19",2.433004,41.539464,Restaurant / Bar restaurant,26/02/2026
+0812106005,"Carrer de Lucius Marcius Optatus, 6",2.433467,41.539396,Perruqueria / barberia,04/09/2023
+0812106005,"Carrer de Pompeu Fabra, 63",2.433741,41.539901,Perruqueria / barberia,05/09/2023
+0812106005,"Ronda d'Antoni Comas i Pujol , 13",2.432428,41.538896,"Arranjament de roba, sabates, claus i tapisseria",17/04/2024
 0812106005,"Ronda de Leopoldo O'Donnell, 39",2.432433,41.538237,Gestoria i assessoria,10/02/2026
+0812106006,"Carrer de Pompeu Fabra, 64",2.433793,41.54008,Celler (vins i licors),05/09/2023
 0812106006,"Carrer de Tetuan, 59",2.436665,41.539935,Supermercat / cooperatives de consum,08/09/2025
 0812106006,"Carrer de Tetuan, 73",2.436388,41.540228,"Llar, decoració i mobiliari",19/02/2026
 0812106006,"Ronda de Leopoldo O'Donnell, 93",2.434414,41.540104,Gestoria i assessoria,15/09/2025
+0812106007,"Carrer de Diego de Velázquez, 70",2.433628,41.538578,Associacions,19/04/2024
 0812106007,"Carrer de Joan Larrea, 13",2.43268,41.538012,"Joieria, rellotgeria i bijuteria",24/09/2025
+0812106007,"Ronda de Leopoldo O'Donnell, 16",2.432116,41.537637,"Papereria, llibreria",09/04/2024
+0812106007,"Ronda de Leopoldo O'Donnell, 36",2.432879,41.538205,Joguines,09/04/2024
+0812106008,"Carrer del Mossèn Jaume Sala, 1",2.431624,41.539618,Celler (vins i licors),18/04/2024
+0812106008,"Carrer del Mossèn Jaume Sala, 17",2.431053,41.539948,Articles de segona mà,18/04/2024
 0812106009,"Avinguda del Maresme, 24",2.43598,41.529504,Supermercat / cooperatives de consum,17/10/2025
 0812106009,"Avinguda del Maresme, 33",2.437153,41.530177,Taller mecànic,22/10/2026
 0812106009,"Avinguda del Maresme, 8",2.435432,41.529347,Articles esportius,22/10/2026
+0812106009,"Camí del Sant Crist, 7",2.425954,41.53351,Materials de construcció i articles de sanejament,18/12/2023
+0812106009,"Carrer de Josep M. Batista i Roca, 2",2.428914,41.535144,"Llar, decoració i mobiliari",13/12/2023
+0812106009,"Carrer de Manuel Carrasco i Formiguera, 23",2.429391,41.533546,Restaurant / Bar restaurant,04/09/2023
 0812106009,"Carrer de Pablo Iglesias, 24",2.429878,41.534347,Instal·lacions i submnistraments,22/10/2025
+0812106009,"Carrer de Sant Valentí, 39",2.435587,41.53251,Perruqueria / barberia,02/11/2023
+0812106009,"Carretera de Barcelona, 88",2.427191,41.524487,Concessionari,10/01/2024
+0812106009,"Via Sèrgia, 63",2.4243,41.529239,Ferreteria,09/01/2024
+0812106010,"Carrer de Sant Valentí, 38",2.435729,41.532627,Rostisseria i Menjar preparat,02/11/2023
+0812106011,"Carrer de Francisco Pizarro, 36",2.437538,41.535084,Professionals construcció,13/06/2024
+0812106011,"Ronda de Francesc Macià, 74",2.435817,41.534985,"Llar, decoració i mobiliari",07/11/2023
+0812106011,"Ronda de Francesc Macià, 76",2.43578,41.535016,Lleure i Cultura,27/09/2023
 0812106011,"Ronda de la República, 63",2.438408,41.535657,Gestoria i assessoria,17/09/2025
+0812106012,"Avinguda de Lluís Companys, 53",2.432288,41.534223,Forn de pa / Fleca,13/12/2023
+0812106012,"Carrer de Ciutat Freta, 24",2.433409,41.534049,Floristeria,19/07/2023
+0812106012,"Ronda de Francesc Macià, 87",2.435131,41.535258,"Arranjament de roba, sabates, claus i tapisseria",07/11/2023
+0812106012,"Ronda de Francesc Macià, 97",2.434836,41.535496,Forn de pa / Fleca,27/09/2023
+0812106013,"Carrer de Joaquim Capell i Vidal, 6",2.433509,41.540015,Merceria i llenceria,18/04/2024

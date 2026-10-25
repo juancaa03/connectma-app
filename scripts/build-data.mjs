@@ -134,7 +134,7 @@ const pros = Object.fromEntries(prosCSV.map((r) => [r.cusec, {
 const pctCiudad = prosCSV.filter((r) => num(r.registros) >= 10).map((r) => num(r.pct_cierres)).sort((a, b) => a - b);
 const medianaCierres = pctCiudad.length ? pctCiudad[Math.floor(pctCiudad.length / 2)] : null;
 
-// Posibles locales vacíos (prospeccion.py): cierre en 2025-2026 sin actividad nueva en la misma dirección.
+// Posibles locales vacíos (prospeccion.py): cerrados desde 2023 sin actividad nueva en la misma dirección.
 // Base del asesor: dirección, qué había y cuándo cerró. Nunca el nombre del negocio.
 const TIPO_ANTES = [
   [/forn de pa|fleca|pastisseria/i, "Panadería"], [/carnisseria|xarcuteria/i, "Carnicería"],
@@ -149,6 +149,15 @@ for (const r of localesCSV) (localesPor[r.cusec] ??= []).push({
   dir: r.direccion, lon: num(r.lon), lat: num(r.lat), antes: r.antes, fecha: r.fecha_cierre,
   tipoAntes: (TIPO_ANTES.find(([rx]) => rx.test(r.antes)) || [])[1] || null,
 });
+
+// Referencias de la ciudad para enseñar cifras sin "pp": variación de vecinos de la zona típica y orden de renta
+const mediana = (xs) => { const s = xs.filter((x) => x != null).sort((a, b) => a - b); return s.length ? s[Math.floor(s.length / 2)] : null; };
+const pobVar = Object.fromEntries(v2.map((r) => [r.cusec, num(r.pob_var_pct)]));
+const pobTipica = mediana(v3.filter((r) => r.revisar_limites !== "si").map((r) => pobVar[r.cusec] ?? null));
+const rentas = v3.map((r) => porSeccion[r.cusec]?.renta).filter((x) => x != null).sort((a, b) => a - b);
+
+const fechaNum = (f) => { const [d, m, a] = (f || "").split("/"); return Number(`${a || 0}${(m || "0").padStart(2, "0")}${(d || "0").padStart(2, "0")}`); };
+for (const l of Object.values(localesPor)) l.sort((a, b) => fechaNum(b.fecha) - fechaNum(a.fecha));
 
 const zonas = v3.map((r) => {
   const s = porSeccion[r.cusec] || { ops: [] };
@@ -165,6 +174,11 @@ const zonas = v3.map((r) => {
     ficha: r.ficha.replace(/^[^:]+:\s*/, "").replace(/; (huecos|por debajo de lo normal): .*$/, "."),
     vecinos: s.vecinos,
     renta: s.renta,
+    rentaPuesto: s.renta != null ? rentas.indexOf(s.renta) + 1 : null, // 1 = la más baja
+    rentaTotal: rentas.length,
+    rentaMediana: mediana(rentas),
+    pobVar: r.revisar_limites === "si" ? null : pobVar[r.cusec] ?? null, // % de vecinos 2015-2024 (INE)
+    pobTipica,
     pct65: s.pct65,
     ops: s.ops,
     otros: s.otros || [],

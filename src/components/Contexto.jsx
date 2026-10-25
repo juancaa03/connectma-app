@@ -7,8 +7,8 @@ export default function Contexto({ z, abrir, compacto = false }) {
   const obra = avisoObra(z);
   const chips = [
     x.estacionM != null && x.estacionM <= 800 && `Estación ${x.estacion ? `(${x.estacion}) ` : ""}a ${x.estacionM} m`,
-    x.bus > 0 && `${x.bus} ${x.bus === 1 ? "parada" : "paradas"} de bus`,
-    x.educacion > 0 && `${x.educacion} ${x.educacion === 1 ? "centro educativo" : "centros educativos"}`,
+    x.bus > 0 && `${x.bus} ${x.bus === 1 ? "parada" : "paradas"} de bus (contando cada sentido)`,
+    x.educacion > 0 && `${x.educacion} ${x.educacion === 1 ? "centro educativo" : "centros educativos"} (incluye escuelas infantiles)`,
     x.salud > 0 && `${x.salud} ${x.salud === 1 ? "centro de salud" : "centros de salud"}`,
     x.mercado > 0 && `${x.mercado === 1 ? "mercado municipal" : `${x.mercado} mercados`}`,
     x.equipamiento > 0 && `${x.equipamiento} ${x.equipamiento === 1 ? "equipamiento" : "equipamientos"} (biblioteca, deporte)`,
@@ -19,6 +19,7 @@ export default function Contexto({ z, abrir, compacto = false }) {
       {chips.length > 0 && (
         <>
           <h3>Qué atrae gente a menos de 450 m</h3>
+          {!compacto && <p className="nota">Datos de OpenStreetMap, contados desde el centro de la zona.</p>}
           <ul className="chips">{chips.map((t) => <li key={t}>{t}</li>)}</ul>
         </>
       )}

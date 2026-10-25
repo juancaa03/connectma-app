@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ESTADOS, avisoObra, fmt, lecturaLocales, porCodigo, pp, veredicto } from "../lib.js";
+import { ESTADOS, avisoObra, fmt, lecturaLocales, porCodigo, rentaTxt, rotacionAlta, vecinosTxt, veredicto } from "../lib.js";
 import Contexto from "./Contexto.jsx";
 import Mapa from "./Mapa.jsx";
 
@@ -23,6 +23,7 @@ export default function Ficha({ c, cerrar, abrir, marcados, marcar, informe }) {
   const lectura = lecturaLocales(z, marcadosAqui);
   const fiables = z.ops.filter((o) => o.fiable);
   const accionLocal = e.accion === "local";
+  const vec = vecinosTxt(z), ren = rentaTxt(z);
 
   return (
     <div className="velo" onClick={cerrar}>
@@ -64,7 +65,7 @@ export default function Ficha({ c, cerrar, abrir, marcados, marcar, informe }) {
           <div><dt>Comercio de proximidad</dt><dd>{z.indice == null ? "—" : `${fmt(z.indice * 100)} %`}</dd><small>de una zona típica</small></div>
           <div><dt>Cierres desde 2023</dt>
             {z.pros?.registros >= 10
-              ? <><dd>{z.pros.pctCierres} %</dd><small>{z.pros.cierres} de {z.pros.registros}{z.pros.mediana != null ? ` · típica ${z.pros.mediana} %` : ""}</small></>
+              ? <><dd>{z.pros.pctCierres} %</dd><small>{z.pros.cierres} de {z.pros.registros} negocios{z.pros.mediana != null ? ` · zona típica ${z.pros.mediana} %` : ""}</small>{rotacionAlta(z) && <small className="rot">Rotación alta</small>}</>
               : <><dd>—</dd><small>pocos registros</small></>}
           </div>
         </dl>
@@ -83,7 +84,7 @@ export default function Ficha({ c, cerrar, abrir, marcados, marcar, informe }) {
 
         {z.locales?.length > 0 && (
           <details className="plegable">
-            <summary>{z.locales.length} {z.locales.length === 1 ? "local cerró" : "locales cerraron"} en 2025–2026 sin actividad nueva</summary>
+            <summary>{z.locales.length} {z.locales.length === 1 ? "local cerró" : "locales cerrados"} desde 2023 sin actividad nueva</summary>
             <ul className="locales-lista">{z.locales.map((l) => (
               <li key={l.dir} className="local">
                 <p className="local-dir"><b>{l.dir}</b></p>
@@ -97,8 +98,8 @@ export default function Ficha({ c, cerrar, abrir, marcados, marcar, informe }) {
         <details className="plegable">
           <summary>Más datos de la zona</summary>
           <dl className="datos">
-            <div><dt>Población 2015–2024</dt><dd>{pp(z.pobRel)}</dd><small>vs zona típica</small></div>
-            <div><dt>Renta por persona</dt><dd>{pp(z.rentaRel)}</dd><small>vs zona típica</small></div>
+            <div><dt>Vecinos</dt><dd>{vec.valor}</dd><small>{vec.nota}</small></div>
+            <div><dt>Renta</dt><dd>{ren.valor}</dd><small>{ren.nota}</small></div>
           </dl>
           {z.pros?.registros >= 10 && <p className="nota">Aperturas desde 2023: {z.pros.aperturas}. El registro anota mejor los cierres que las aperturas de negocios antiguos: sirve para comparar zonas entre sí.</p>}
           {z.polos?.length > 0 && <p className="cerca">Cerca: {z.polos.map((p) => `${p.nombre} (${p.dist} m)`).join(" · ")}</p>}

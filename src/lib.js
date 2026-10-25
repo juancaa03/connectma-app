@@ -8,12 +8,12 @@ export const ESTADOS = {
   POTENCIAL: { nombre: "Potencial", color: "var(--st-potencial)", accion: "informe", orden: 0,
     lectura: "Tiene muy poca oferta de algún tipo de negocio para los vecinos que hay o que llegan." },
   DECLIVE: { nombre: "Declive", color: "var(--st-declive)", accion: "local", orden: 1,
-    lectura: "Pierde vecinos y ya le falta comercio." },
+    lectura: "Pierde demanda y ya le falta comercio." },
   "EN RIESGO": { nombre: "En riesgo", color: "var(--st-riesgo)", accion: "local", orden: 2,
     lectura: "Hoy tiene comercio, pero pierde demanda." },
-  ESTABLE: { nombre: "Estable", color: "var(--st-estable)", accion: null, orden: 3,
-    lectura: "Sin señal clara." },
-  CONSOLIDADA: { nombre: "Consolidada", color: "var(--st-consolidada)", accion: null, orden: 4,
+  ESTABLE: { nombre: "Sin señal clara", color: "var(--st-estable)", accion: null, orden: 3,
+    lectura: "Algo menos de comercio que una zona típica, sin tendencia clara." },
+  CONSOLIDADA: { nombre: "Bien servida", color: "var(--st-consolidada)", accion: null, orden: 4,
     lectura: "Comercio suficiente y demanda estable o creciente." },
 };
 
@@ -57,11 +57,41 @@ export function cierresTxt(z) {
   return `Desde 2023 han cerrado ${p.cierres} de sus ${p.registros} negocios registrados (${p.pctCierres} %${p.mediana != null ? `; en la zona típica, ${p.mediana} %` : ""}) y han abierto ${p.aperturas}.`;
 }
 
+// Rotación alta: cierres desde 2023 de al menos 1,25 veces los de la zona típica (con 20 negocios registrados o más)
+export const rotacionAlta = (z) => z.pros?.registros >= 20 && z.pros.mediana != null && z.pros.pctCierres >= 1.25 * z.pros.mediana;
+
+// Cifras en palabras, sin "pp"
+const signo = (n) => `${n > 0 ? "+" : n < 0 ? "−" : ""}${fmt(Math.abs(n))} %`;
+export function vecinosTxt(z) {
+  if (z.pobVar != null) return { valor: signo(z.pobVar), nota: `2015–2024 · zona típica ${signo(z.pobTipica)}` };
+  if (z.pobRel == null) return { valor: "—", nota: "" };
+  return { valor: z.pobRel > 3 ? "Crece" : z.pobRel < -3 ? "Pierde" : "Estable",
+    nota: `${z.pobRel > 3 ? "más rápido que" : z.pobRel < -3 ? "frente a" : "como"} una zona típica · serie municipal 2008–2020` };
+}
+export function rentaTxt(z) {
+  if (z.renta == null) return { valor: "—", nota: "" };
+  const p = z.rentaPuesto, t = z.rentaTotal;
+  const pos = p <= Math.round(t / 5) ? `de las más bajas de Mataró (${p}.ª de ${t})`
+    : p > t - Math.round(t / 5) ? `de las más altas de Mataró (${t - p + 1}.ª de ${t})`
+    : `en la media de Mataró (mediana ${fmt(z.rentaMediana)} €)`;
+  return { valor: `${fmt(z.renta)} €`, nota: `por persona · ${pos}` };
+}
+
 export function veredicto(z) {
+  const v = veredictoBase(z);
+  if (rotacionAlta(z) && !["DECLIVE", "EN RIESGO"].includes(z.estado))
+    v.texto += ` Pero aquí cierran más negocios que en una zona típica (${z.pros.pctCierres} % desde 2023, frente al ${z.pros.mediana} %): conviene saber por qué antes de abrir.`;
+  return v;
+}
+
+function veredictoBase(z) {
   const ops = z.ops.filter((o) => o.fiable);
   const tipos = ops.slice(0, 3).map((o) => o.tipo.toLowerCase());
   const comercio = z.indice == null ? null : pctTxt(z.indice);
-  const demanda = z.demanda === "crece" ? "La zona gana vecinos" : z.demanda === "cae" ? "La zona pierde vecinos" : "La demanda está estable";
+  // La demanda la decide la población; solo si está plana, la renta. El texto dice cuál de las dos fue.
+  const crecePob = z.pobRel != null && z.pobRel > 3, caePob = z.pobRel != null && z.pobRel < -3;
+  const demanda = z.demanda === "crece" ? (crecePob ? "La zona gana vecinos" : "La renta sube más que en Mataró")
+    : z.demanda === "cae" ? (caePob ? "La zona pierde vecinos" : "La renta se queda atrás respecto a Mataró") : "La demanda está estable";
   const cierres = cierresTxt(z);
   switch (z.estado) {
     case "POTENCIAL":
@@ -71,13 +101,13 @@ export function veredicto(z) {
           texto: `Para unos ${fmt(z.vecinos)} vecinos a 5 minutos andando hay ${o.oferta} de ${o.tipo.toLowerCase()}, cuando lo normal serían unos ${fmt(o.esperado)} (el ${o.pct} %). ${demanda}.` };
       }
       return { titulo: "Zona con poco comercio en general",
-        texto: `Tiene el ${comercio} del comercio de proximidad de una zona típica y ${z.demanda === "crece" ? "gana vecinos" : "la renta sube"}, pero ningún tipo concreto destaca. Conviene comprobarlo a pie de calle.` };
+        texto: `Tiene el ${comercio} del comercio de proximidad de una zona típica y ${z.demanda === "crece" && crecePob ? "gana vecinos" : "su renta sube más que en Mataró"}, pero ningún tipo concreto destaca. Conviene comprobarlo a pie de calle.` };
     case "DECLIVE":
       return { titulo: "Prioridad de intervención",
         texto: `${demanda} y ya tiene solo el ${comercio} del comercio de una zona típica. ${cierres ? cierres + " " : ""}Candidata a las ayudas de reactivación (Aixequem Persianes).` };
     case "EN RIESGO":
       return { titulo: "Vigilar: hoy tiene comercio, pero pierde demanda",
-        texto: `Tiene el ${comercio} del comercio de una zona típica, pero ${z.demanda === "cae" ? "pierde vecinos" : "la renta se queda atrás"}. ${cierres || "Conviene vigilar los locales que cierran."}` };
+        texto: `Tiene el ${comercio} del comercio de una zona típica, pero ${caePob ? "pierde vecinos" : "su renta se queda atrás respecto a Mataró"}. ${cierres || "Conviene vigilar los locales que cierran."}` };
     case "ESTABLE":
       return { titulo: "Sin señal clara", texto: `Tiene el ${comercio} del comercio de una zona típica y la demanda está estable.` };
     default:

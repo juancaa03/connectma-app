@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BARRIOS, ESTADOS, TIPOS, fmt, pp, zonas } from "../lib.js";
+import { BARRIOS, ESTADOS, TIPOS, fmt, vecinosTxt, zonas } from "../lib.js";
 import Mapa from "./Mapa.jsx";
 
 // Asesor para quien emprende: elige qué negocio quiere abrir y, si quiere, en qué barrio.
@@ -40,7 +40,10 @@ export default function Asesor({ abrir, informe }) {
 
   const porque = (z, o) => {
     const partes = [`hay ${o.oferta} y lo normal serían ~${fmt(o.esperado)} para sus ${fmt(z.vecinos)} vecinos a 450 m`];
-    if (z.demanda === "crece") partes.push(`la zona gana demanda (${pp(z.pobRel)} de población frente al barrio típico)`);
+    if (z.demanda === "crece") {
+      const v = vecinosTxt(z);
+      partes.push(!(z.pobRel > 3) ? "la renta de la zona sube más que en Mataró" : z.pobVar != null ? `la zona gana vecinos (${v.valor} entre 2015 y 2024; ${v.nota.split(" · ")[1]})` : "la zona gana vecinos más rápido que una zona típica (serie municipal 2008–2020)");
+    }
     if (z.demanda === "cae") partes.push("ojo: la zona pierde demanda");
     if (!o.fiable) partes.push("dato de hostelería poco fiable, compruébalo a pie de calle");
     const t = partes.join("; ") + ".";
@@ -83,14 +86,14 @@ export default function Asesor({ abrir, informe }) {
                   <button className="btn peq" onClick={() => informe(z.c)}>Informe de la zona</button>
                   {z.locales?.length > 0 && (
                     <button className="btn peq" onClick={() => verLocales(z.c)} aria-expanded={!!abiertas[z.c]}>
-                      {abiertas[z.c] ? "Ocultar locales" : `${z.locales.length} ${z.locales.length === 1 ? "local cerrado" : "locales cerrados"} hace poco`}
+                      {abiertas[z.c] ? "Ocultar locales" : `${z.locales.length} ${z.locales.length === 1 ? "local cerrado" : "locales cerrados"} sin actividad nueva`}
                     </button>
                   )}
                 </div>
                 {abiertas[z.c] && (
                   <>
                     <ul className="locales-lista">{z.locales.map((l) => <Local key={l.dir} l={l} z={z} tipo={tipo} />)}</ul>
-                    <p className="nota">Cerraron en 2025–2026 y no consta ninguna actividad nueva en la dirección (registro de prospección del Ajuntament). Comprueba que sigue disponible.</p>
+                    <p className="nota">Cerrados desde 2023 sin ninguna actividad nueva registrada en la dirección (registro de prospección del Ajuntament). Comprueba que sigue disponible.</p>
                   </>
                 )}
               </li>
