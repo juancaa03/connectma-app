@@ -202,3 +202,13 @@ legend, .campo { font-weight: 700; font-size: var(--s-1); margin-bottom: 0.4rem;
 .inf-locales { padding-left: 1.1rem; font-size: 0.92rem; }
 .inf-locales li { margin-bottom: 0.2rem; }
 .datos small.rot { color: var(--brick); font-weight: 700; }
+
+/* Lecturas de ciudad en la Bandeja */
+.ciudad { margin-bottom: 1.6rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--line); }
+.ciudad h2 { font-size: var(--s1, 1.2rem); margin: 0 0 0.8rem; }
+.ciudad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.ciudad article { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--st-potencial); padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.ciudad article h3 { margin: 0; font-size: 1.05rem; }
+.ciudad article p { margin: 0; }
+.ciudad-accion { font-weight: 600; }
+.ciudad article .btn { align-self: flex-start; margin-top: auto; }

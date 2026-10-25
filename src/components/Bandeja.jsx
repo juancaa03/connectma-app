@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { BARRIOS, ESTADOS, TIPOS, avisoObra, lecturaLocales, ordenar, rotacionAlta, veredicto, zonas } from "../lib.js";
+import { BARRIOS, ESTADOS, TIPOS, avisoObra, lecturaLocales, datosCiudad, ordenar, rotacionAlta, veredicto, zonas } from "../lib.js";
 import Mapa from "./Mapa.jsx";
 
 export default function Bandeja({ abrir, marcados }) {
@@ -8,10 +8,11 @@ export default function Bandeja({ abrir, marcados }) {
   const [tipo, setTipo] = useState("");
 
   const lista = useMemo(() => ordenar(zonas.filter((z) =>
-    (estado === "TODAS" || (estado === "EXTENSION" ? z.ctx?.ext?.length > 0 : estado === "ACCION" ? ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) || marcados[z.c]?.length > 0 : z.estado === estado)) &&
+    (estado === "TODAS" || (estado === "ROTACION" ? rotacionAlta(z) : estado === "EXTENSION" ? z.ctx?.ext?.length > 0 : estado === "ACCION" ? ["POTENCIAL", "DECLIVE", "EN RIESGO"].includes(z.estado) || z.ops.some((o) => o.fiable) || marcados[z.c]?.length > 0 : z.estado === estado)) &&
     (!barrio || z.barrio === barrio) &&
     (!tipo || z.ops.some((o) => o.tipo === tipo)))), [estado, barrio, tipo, marcados]);
 
+  const dc = useMemo(datosCiudad, []);
   const cuenta = (e) => zonas.filter((z) => z.estado === e).length;
   const visibles = new Set(lista.map((z) => z.c));
 
@@ -50,6 +51,29 @@ export default function Bandeja({ abrir, marcados }) {
       </aside>
 
       <section className="cola" aria-live="polite">
+        <section className="ciudad" aria-label="Lo que dicen los datos de Mataró">
+          <h2>Lo que dicen los datos de Mataró</h2>
+          <div className="ciudad-grid">
+            <article>
+              <h3>Donde menos renta, más cierres</h3>
+              <p>Desde 2023 ha cerrado el <b>{dc.cierresBaja} %</b> de los negocios registrados en las zonas de renta más baja, frente al <b>{dc.cierresAlta} %</b> en las de renta más alta.</p>
+              <p className="ciudad-accion">Prioridad para RetailLab, Aixequem Persianes y la OME.</p>
+              <button className="btn peq" onClick={() => setEstado("ROTACION")}>Ver zonas con rotación alta</button>
+            </article>
+            <article>
+              <h3>{dc.locales} locales cerrados sin actividad nueva</h3>
+              <p>Cerrados desde 2023 y sin ningún negocio nuevo registrado en la misma dirección, según el registro de prospección del Ajuntament.</p>
+              <p className="ciudad-accion">Bolsa de locales para quien emprende: en cada ficha y en el Asesor.</p>
+            </article>
+            <article>
+              <h3>{dc.extZonas} zonas para una segunda tienda</h3>
+              <p>Un tipo de negocio funciona en la zona de al lado y aquí casi no hay.</p>
+              <p className="ciudad-accion">Ayudar al comercio que ya funciona a abrir donde falta.</p>
+              <button className="btn peq" onClick={() => setEstado("EXTENSION")}>Ver estas zonas</button>
+            </article>
+          </div>
+          <p className="nota">Renta: zonas ordenadas por renta por persona (INE) y divididas en tres grupos iguales; solo zonas con 20 o más negocios registrados. Es una relación, no una causa.</p>
+        </section>
         <header className="cola-head">
           <h1>{lista.length} {lista.length === 1 ? "zona" : "zonas"}</h1>
           <p>Ordenadas por prioridad: primero potencial, declive y riesgo; dentro de cada estado, las que más se apartan de lo normal. Los porcentajes son la oferta de cada tipo frente a lo normal en Mataró; en salud, óptica, peluquería, electrónica, floristería y librería, frente a barrios de renta parecida.</p>

@@ -146,3 +146,16 @@ export function descargarCSV(nombre, filas) {
   const a = Object.assign(document.createElement("a"), { href: url, download: nombre });
   document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
+
+// Tres lecturas de ciudad para la Bandeja, calculadas con los mismos datos de la app.
+export function datosCiudad() {
+  const conR = zonas.filter((z) => z.renta != null && z.pros?.registros >= 20).sort((a, b) => a.renta - b.renta);
+  const t = Math.floor(conR.length / 3);
+  const pctDe = (g) => { const reg = g.reduce((s, z) => s + z.pros.registros, 0); return reg ? Math.round(100 * g.reduce((s, z) => s + z.pros.cierres, 0) / reg) : null; };
+  return {
+    cierresBaja: pctDe(conR.slice(0, t)),
+    cierresAlta: pctDe(conR.slice(conR.length - t)),
+    locales: zonas.reduce((s, z) => s + (z.locales?.length || 0), 0),
+    extZonas: zonas.filter((z) => z.ctx?.ext?.length > 0).length,
+  };
+}
